@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="org.openjfx:javafx-base:13" type="repository">
+    <properties maven-id="org.openjfx:javafx-base:13" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/javafx-base-13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-base-13-mac.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

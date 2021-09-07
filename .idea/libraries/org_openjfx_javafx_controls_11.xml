@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="org.openjfx:javafx-controls:11" type="repository">
+    <properties maven-id="org.openjfx:javafx-controls:11" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/javafx-controls-11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-controls-11-mac.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-graphics-11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-graphics-11-mac.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-base-11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javafx-base-11-mac.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
