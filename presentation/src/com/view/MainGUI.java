@@ -1,26 +1,23 @@
 package com.view;
 
-
 import com.viewmodel.viewmodel;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import usecases.IBusinessUseCase;
+import usecases.Page;
 
 
-
-public class MainGUI extends Application implements Ipresentation {
+public class MainGUI extends Application implements Page {
 
     viewmodel vm;
     private Stage stage;
+
     @Override
     public void start(Stage stage) throws Exception {
         this.stage = stage;
@@ -29,41 +26,56 @@ public class MainGUI extends Application implements Ipresentation {
         Label l = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
         Button b = new Button("Authorize");
         TextField tf = new TextField();
+        //tf.textProperty().bind(Bindings.convert(l.textProperty()));
+       // l.textProperty().bind(Bindings.convert(tf.textProperty()));
+
+        tf.setPromptText("email address");
         PasswordField pw = new PasswordField();
+        pw.setPromptText("password");
         ImageView iv2 = new ImageView(new Image("http://icons.iconarchive.com/icons/kidaubis-design/cool-heroes/128/Starwars-Stormtrooper-icon.png"));
         iv2.setFitWidth(100);
         iv2.setPreserveRatio(true);
         iv2.setY(50);
         b.setMinWidth(300);
-        GridPane root=new GridPane();
+        GridPane root = new GridPane();
         root.setAlignment(Pos.TOP_CENTER);
         root.setVgap(20);
-        root.addRow(2,l);
+        root.addRow(2, l);
 
-        root.addRow(1,iv2);
-        root.addRow(3,tf);
-        root.addRow(4,pw);
-        root.addRow(5,b);
+        root.addRow(1, iv2);
+        root.addRow(3, tf);
+        root.addRow(4, pw);
+        root.addRow(5, b);
 
         Scene scene = new Scene(root, 640, 380);
 
+    //    b.onMouseClickedProperty().bind();
+
         b.setOnMouseClicked(mouseEvent -> {
-            Scene scene2 = new Scene(new GridPane(), 640, 380);
-            vm.setroute(scene2);
+            try {
+                //new run();
+                Scene scene2 = new Scene(new GridPane(), 640, 380);
+                vm.setroute(scene2);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
+
         stage.setScene(scene);
         stage.setTitle("demo");
         stage.show();
         setupMVVM();
+
     }
 
-    void setupMVVM(){
+    void setupMVVM() {
         vm = new viewmodel();
         vm.setpresenter(this);
     }
 
+
     @Override
-    public void test() {
+    public void showresult() {
 
     }
 
