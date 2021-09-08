@@ -5,7 +5,7 @@ import javafx.stage.Stage;
 
 import java.util.HashMap;
 
-public abstract class IBusinessUseCase<T extends Page> {
+public abstract class IBusinessUseCase<T extends Page<?>> {
 
     HashMap<String, String> container = new HashMap<>();
     T t = null;
