@@ -1,7 +1,6 @@
-package com.view;
+package com.loginpage.view;
 
-import com.viewmodel.viewmodel;
-import javafx.application.Application;
+import com.loginpage.viewmodel.viewmodel;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -10,15 +9,15 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-
-public class MainGUI<T, U extends Stage> extends Application implements LoginPage<T, U> {
-
+public class LoginPage<T, U extends Stage> extends Stage implements ILoginPage<T,U>{
     viewmodel vm;
-    private Stage stage;
-
-    @Override
-    public void start(Stage stage) throws Exception {
-        this.stage = stage;
+    private Stage _stage;
+    public LoginPage(Stage s){
+        this._stage = s;
+        setupUI();
+        setupMVVM();
+    }
+    void setupUI(){
         String javaVersion = System.getProperty("java.version");
         String javafxVersion = System.getProperty("javafx.version");
         Label l = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
@@ -60,18 +59,14 @@ public class MainGUI<T, U extends Stage> extends Application implements LoginPag
             }
         });
 
-        stage.setScene(scene);
-        stage.setTitle("demo");
-        stage.show();
-        setupMVVM();
-
+        this._stage.setScene(scene);
+        this._stage.setTitle("demo");
+        this._stage.show();
     }
-
     void setupMVVM() {
         vm = new viewmodel();
         vm.setpresenter(this);
     }
-
 
     @Override
     public void loginResult(T args) {
@@ -84,7 +79,6 @@ public class MainGUI<T, U extends Stage> extends Application implements LoginPag
 
     @Override
     public U getStage() {
-        return (U) this.stage;
+        return (U) this._stage;
     }
-
 }

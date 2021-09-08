@@ -1,6 +1,5 @@
 package com;
 
-import com.view.MainGUI;
 import javafx.application.Application;
 
 public class Init {
