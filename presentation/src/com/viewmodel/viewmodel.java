@@ -1,24 +1,12 @@
 package com.viewmodel;
 
-import javafx.scene.Scene;
-import usecases.IBusinessUseCase;
-import usecases.Page;
+import base.IBusinessUseCase;
+import com.view.LoginPage;
 
 
-public class viewmodel extends IBusinessUseCase<Page> {
-    viewmodel v = null;
-    Page t = null;
-
-    public viewmodel() {
-        v = this;
-    }
-
-    viewmodel getViewmodel() {
-        return this;
-    }
-
+public class viewmodel extends IBusinessUseCase<LoginPage> {
     @Override
     public void run() {
-        this.defaultExecute("","");
+        getpresenter().loginResult(this.defaultExecute("test", "defultexevute return"));
     }
 }

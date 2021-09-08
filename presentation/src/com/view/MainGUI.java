@@ -9,11 +9,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import usecases.IBusinessUseCase;
-import usecases.Page;
 
 
-public class MainGUI extends Application implements Page {
+public class MainGUI<T, U extends Stage> extends Application implements LoginPage<T, U> {
 
     viewmodel vm;
     private Stage stage;
@@ -27,7 +25,7 @@ public class MainGUI extends Application implements Page {
         Button b = new Button("Authorize");
         TextField tf = new TextField();
         //tf.textProperty().bind(Bindings.convert(l.textProperty()));
-       // l.textProperty().bind(Bindings.convert(tf.textProperty()));
+        // l.textProperty().bind(Bindings.convert(tf.textProperty()));
 
         tf.setPromptText("email address");
         PasswordField pw = new PasswordField();
@@ -49,13 +47,14 @@ public class MainGUI extends Application implements Page {
 
         Scene scene = new Scene(root, 640, 380);
 
-    //    b.onMouseClickedProperty().bind();
+        //    b.onMouseClickedProperty().bind();
 
         b.setOnMouseClicked(mouseEvent -> {
             try {
                 //new run();
-                Scene scene2 = new Scene(new GridPane(), 640, 380);
-                vm.setroute(scene2);
+                //Scene scene2 = new Scene(new GridPane(), 640, 380);
+                //vm.setroute(scene2);
+                vm.run();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -75,12 +74,17 @@ public class MainGUI extends Application implements Page {
 
 
     @Override
-    public void showresult() {
-
+    public void loginResult(T args) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText("Look, an Information Dialog");
+        alert.setContentText("I have a great message for you! :\n\n\n\n" + args);
+        alert.showAndWait();
     }
 
     @Override
-    public Stage getStage() {
-        return this.stage;
+    public U getStage() {
+        return (U) this.stage;
     }
+
 }
