@@ -1,8 +1,9 @@
 package com.loginpage.view;
 
-import base.Page;
 import javafx.stage.Stage;
 
-public interface ILoginPage<T, U extends Stage> extends Page<U> {
+public interface ILoginPage<T extends Stage> {
     void loginResult(T args);
+
+    Stage get();
 }

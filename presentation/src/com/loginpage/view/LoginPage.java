@@ -1,6 +1,6 @@
 package com.loginpage.view;
 
-import com.loginpage.viewmodel.viewmodel;
+import com.loginpage.viewmodel.ViewModel;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -9,15 +9,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class LoginPage<T, U extends Stage> extends Stage implements ILoginPage<T,U>{
-    viewmodel vm;
+public class LoginPage<T extends Stage> implements ILoginPage<T> {
+    ViewModel vm;
     private Stage _stage;
-    public LoginPage(Stage s){
+
+    public LoginPage(Stage s) {
         this._stage = s;
         setupUI();
         setupMVVM();
     }
-    void setupUI(){
+
+    void setupUI() {
         String javaVersion = System.getProperty("java.version");
         String javafxVersion = System.getProperty("javafx.version");
         Label l = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
@@ -63,8 +65,9 @@ public class LoginPage<T, U extends Stage> extends Stage implements ILoginPage<T
         this._stage.setTitle("demo");
         this._stage.show();
     }
+
     void setupMVVM() {
-        vm = new viewmodel();
+        vm = new ViewModel();
         vm.setpresenter(this);
     }
 
@@ -75,10 +78,13 @@ public class LoginPage<T, U extends Stage> extends Stage implements ILoginPage<T
         alert.setHeaderText("Look, an Information Dialog");
         alert.setContentText("I have a great message for you! :\n\n\n\n" + args);
         alert.showAndWait();
+
     }
 
     @Override
-    public U getStage() {
-        return (U) this._stage;
+    public Stage get() {
+        return this._stage;
     }
+
+
 }
