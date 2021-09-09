@@ -1,9 +1,10 @@
 package com;
 
-import com.loginpage.view.ILoginPage;
+import com.loginpage.view.IPage;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public abstract class GenericRouter<T extends ILoginPage> {
+public abstract class GenericRouter<T extends IPage<Stage>> {
     T t = null;
 
     public void setpresenter(T t) {

@@ -67,7 +67,7 @@ public class LoginPage<T extends Stage> implements ILoginPage<T> {
     }
 
     void setupMVVM() {
-        vm = new ViewModel();
+        vm = new ViewModel<ILoginPage<Stage>>();
         vm.setpresenter(this);
     }
 
@@ -82,8 +82,8 @@ public class LoginPage<T extends Stage> implements ILoginPage<T> {
     }
 
     @Override
-    public Stage get() {
-        return this._stage;
+    public T get() {
+        return (T)this._stage;
     }
 
 

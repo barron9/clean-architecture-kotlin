@@ -5,8 +5,9 @@ import com.GenericRouter;
 import com.loginpage.view.ILoginPage;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
-public class ViewModel<T> extends GenericRouter<ILoginPage> {
+public class ViewModel<T> extends GenericRouter<ILoginPage<Stage>> {
 
     public void run() {
 
