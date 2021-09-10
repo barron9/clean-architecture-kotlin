@@ -1,6 +1,6 @@
 package model;
 
 public class User {
-    String name;
+    public String name;
     String authkey;
 }

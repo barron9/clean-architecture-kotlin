@@ -9,7 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class LoginPage<T extends Stage> implements ILoginPage<T> {
+public class LoginPage<U,T extends Stage> implements IPage<U,T> {
     ViewModel vm;
     private Stage _stage;
 
@@ -67,23 +67,22 @@ public class LoginPage<T extends Stage> implements ILoginPage<T> {
     }
 
     void setupMVVM() {
-        vm = new ViewModel<ILoginPage<Stage>>();
+        vm = new ViewModel<IPage>();
         vm.setpresenter(this);
-    }
-
-    @Override
-    public void loginResult(T args) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText("Look, an Information Dialog");
-        alert.setContentText("I have a great message for you! :\n\n\n\n" + args);
-        alert.showAndWait();
-
     }
 
     @Override
     public T get() {
         return (T)this._stage;
+    }
+
+    @Override
+    public void loginResult(U args) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText("Look, an Information Dialog");
+        alert.setContentText("I have a great message for you! :\n\n\n\n" + args);
+        alert.showAndWait();
     }
 
 
