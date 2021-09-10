@@ -12,8 +12,8 @@ public class UserRepository<T,R extends HashMap> implements IDataLayer<R> {
     @Override
     public R getusers() {
         data = (R) new HashMap<String,String>();
-        for (int i = 0; i < 100; i++) {
-            data.put("testuser"+new Random(123), (new Random(123).nextInt())+"");
+        for (int i = 0; i < 100000; i++) {
+            data.put("testuser:"+i, (new Random().nextInt(99999))+"");
         }
         return data;
     }
