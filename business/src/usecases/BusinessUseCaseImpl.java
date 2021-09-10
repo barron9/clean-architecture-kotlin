@@ -1,16 +1,7 @@
 package usecases;
 
-import java.util.concurrent.CompletableFuture;
+import java.util.HashMap;
 
-public class BusinessUseCaseImpl<T> extends BusinessUseCase<T>{
+public class BusinessUseCaseImpl<T extends HashMap> extends BusinessUseCase<T>{
 
-    @Override
-    public CompletableFuture<T> execute() {
-        return null;
-    }
-
-    @Override
-    public void run() {
-
-    }
 }

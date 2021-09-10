@@ -4,6 +4,8 @@ import com.loginpage.view.IPage;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.concurrent.ExecutionException;
+
 public abstract class GenericRouter<T extends IPage> {
     T t = null;
 
@@ -19,7 +21,7 @@ public abstract class GenericRouter<T extends IPage> {
         getStage().get().setScene(s);
     }
 
-    protected abstract void run();
+    protected abstract void run() throws ExecutionException, InterruptedException;
 
     protected T getStage() {
         return t;
