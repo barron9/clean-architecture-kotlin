@@ -1,4 +1,5 @@
 rootProject.name = 'kotlintest2'
+include 'ui'
+include 'data'
 include 'domain'
-include 'interops'
 
