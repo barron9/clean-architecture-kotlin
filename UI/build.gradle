@@ -17,6 +17,7 @@ repositories {
 dependencies {
     implementation project(":data")
     implementation project(":domain")
+    implementation project(":network")
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     implementation 'com.google.dagger:dagger:2.37'
