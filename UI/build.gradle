@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'org.jetbrains.kotlin.jvm'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
 }
 apply plugin: 'idea'
 apply plugin: 'kotlin'
@@ -14,16 +15,21 @@ repositories {
 }
 
 dependencies {
+    implementation project(":data")
+    implementation project(":domain")
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     implementation 'com.google.dagger:dagger:2.37'
     kapt 'com.google.dagger:dagger-compiler:2.37'
-    implementation project(":data")
-    implementation project(":domain")
     implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
+    implementation 'org.openjfx:javafx:11'
+    implementation 'org.openjfx:javafx-controls:11'
 
 }
-
+javafx {
+    version = "11"
+    modules = [ 'javafx.controls' ]
+}
 test {
     useJUnitPlatform()
 }

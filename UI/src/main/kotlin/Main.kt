@@ -1,5 +1,7 @@
 package com
 
+import javafx.application.Application
+
 fun main() {
-View()
+    Application.launch(View::class.java)
 }
