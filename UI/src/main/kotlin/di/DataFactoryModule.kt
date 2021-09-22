@@ -1,6 +1,6 @@
 package com.di
 
-import com.models.DataCacheFactory
+import com.cachedata.DataCacheFactory
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

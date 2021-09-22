@@ -2,5 +2,6 @@ rootProject.name = 'kotlintest2'
 include 'ui'
 include 'data'
 include 'domain'
-include 'test4'
+include 'persistence'
+include 'network'
 

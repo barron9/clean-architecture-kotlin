@@ -1,7 +1,9 @@
-package com.models
+package com.cachedata
 
+import models.Car
 import javax.inject.Inject
 
+//Cache InMemory Mock-DB
 class CarData @Inject constructor() {
     private var name:String
 
@@ -9,8 +11,8 @@ class CarData @Inject constructor() {
         this.name = "mazda 1998 coupé"
     }
 
-    fun get():String{
-        return String().plus(this.name)
+    fun get(): Car {
+        return Car(this.name)
     }
 
     fun set(name:String){
@@ -18,7 +20,7 @@ class CarData @Inject constructor() {
     }
 
     override fun toString():String{
-        return this.get()
+        return String().plus(this.get())
     }
 
 }

@@ -1,7 +1,7 @@
 package com
 
 import com.di.DaggerAppComp
-import com.models.DataCacheFactory
+import com.cachedata.DataCacheFactory
 import javafx.application.Application
 import javafx.geometry.Pos
 import javafx.scene.Scene
