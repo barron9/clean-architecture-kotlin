@@ -2,7 +2,7 @@ package interfaces
 
 import io.reactivex.Completable
 import io.reactivex.Single
-import models.Car
+import entities.Car
 
 interface DataInterface {
     fun getCar():Single<Car>

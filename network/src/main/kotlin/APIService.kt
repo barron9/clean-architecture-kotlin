@@ -2,7 +2,7 @@ package network
 
 import interfaces.NetworkInterface
 import io.reactivex.Single
-import models.Repo
+import entities.Repo
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

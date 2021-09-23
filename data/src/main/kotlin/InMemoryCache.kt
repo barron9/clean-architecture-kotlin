@@ -1,6 +1,6 @@
 package com.cachedata
 
-import models.Car
+import entities.Car
 import javax.inject.Inject
 
 //Cache InMemory Mock-DB

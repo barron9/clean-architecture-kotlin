@@ -20,6 +20,9 @@ dependencies {
     implementation project(":network")
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation("io.kotest:kotest-runner-junit5:5.0.0.M2") // for kotest framework
+    testImplementation("io.kotest:kotest-assertions-core:5.0.0.M2") // for kotest core jvm assertions
+    testImplementation("io.kotest:kotest-property:5.0.0.M2")
     implementation 'com.google.dagger:dagger:2.37'
     kapt 'com.google.dagger:dagger-compiler:2.37'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
