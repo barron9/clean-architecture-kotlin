@@ -37,3 +37,5 @@ javafx {
 test {
     useJUnitPlatform()
 }
+
+targetCompatibility = '11'
