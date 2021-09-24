@@ -1,4 +1,4 @@
-rootProject.name = 'kotlintest2'
+rootProject.name = 'cleanarch'
 include 'ui'
 include 'data'
 include 'domain'
