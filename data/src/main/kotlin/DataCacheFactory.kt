@@ -14,6 +14,10 @@ class DataCacheFactory @Inject constructor(val cardata: CarData) : DataInterface
     }
 
     override fun setCar(@NonNull name: String): Completable {
-        return Completable.complete().doOnComplete { this.cardata.set(name) };
+        this.cardata.set(name)
+        return if(name == this.cardata.get().name)
+            Completable.complete();
+        else
+            Completable.error(Throwable("car name error!"))
     }
 }
