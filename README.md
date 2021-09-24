@@ -1,6 +1,6 @@
 # CleanArch. Template (Kotlin)
 
-Clean Arch app template written in Clean Architecture. 
+Clean Arch app template written in kotlin. 
 
 [![version](https://img.shields.io/badge/version-template.beta-y.svg)](https://semver.org)
 ## Libraries
