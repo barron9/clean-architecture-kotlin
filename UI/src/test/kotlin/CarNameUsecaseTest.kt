@@ -6,6 +6,7 @@ import io.kotest.core.spec.style.ShouldSpec
 import io.kotest.core.spec.style.StringSpec
 import io.kotest.core.spec.style.Test
 import io.kotest.matchers.collections.shouldBeIn
+import io.kotest.matchers.shouldBe
 import io.kotest.property.checkAll
 import io.kotest.property.forAll
 import kotlin.time.Duration
@@ -41,5 +42,23 @@ class MyTests : ShouldSpec() {
           //      userRepository.size() shouldBe 1
             }
         }
+        should("greater then one") {
+            (1..10).toList().customfilter { it < 11 } shouldBe true
+            (1..10).toList().customfilter { it > 1 } shouldBe true
+        }
+
     }
 }
+
+
+fun List<Int>.customfilter(filter:(Int)->Boolean):Boolean{
+    var res:Boolean = false;
+    for(i in this){
+       if(filter(i))
+           res = true
+    }
+    return res;
+}
+
+
+
