@@ -1,4 +1,4 @@
-package com
+package com.barron
 
 import com.di.DaggerAppComp
 import com.cachedata.DataCacheFactory
@@ -37,15 +37,12 @@ class View: Application() { // javafx window
     companion object {
         init {
             println(this)
-
         }
-
-
     }
 
     init {
         DaggerAppComp.create().inject(this)
-        dcf.getCar().subscribe(::println)
+        dcf.getCar().subscribe()
         duc.exec()
     }
 

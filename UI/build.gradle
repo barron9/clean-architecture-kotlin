@@ -1,5 +1,4 @@
 plugins {
-    id 'java'
     id 'org.jetbrains.kotlin.jvm'
     id 'org.openjfx.javafxplugin' version '0.0.10'
 }

@@ -1,6 +1,6 @@
 package com.di
 
-import com.View
+import com.barron.View
 import dagger.Component
 import javax.inject.Singleton
 

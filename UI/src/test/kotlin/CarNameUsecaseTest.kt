@@ -1,5 +1,5 @@
 
-import com.View
+import com.barron.View
 import com.di.DaggerAppComp
 import io.kotest.assertions.timing.eventually
 import io.kotest.core.spec.style.ShouldSpec

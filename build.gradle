@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        kotlin_version = '1.5.31'
+        kotlin_version = '1.5.10'
     }
     repositories {
         google()
@@ -12,7 +12,7 @@ buildscript {
     }
 }
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.5.31'
+    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
 
 }
 
@@ -33,7 +33,7 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.31'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.10'
 
     implementation 'com.google.dagger:dagger:2.37'
     kapt 'com.google.dagger:dagger-compiler:2.37'
