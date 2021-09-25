@@ -7,6 +7,8 @@ Clean Arch app template written in kotlin.
 
 [RXJava2](https://) - Reactive, asynchronous and event-based programs
 
+[RXAndroid2](https://) - Android schedulers etc. bindings of rxjava
+
 [Dagger2](https://) - Dependency injection
 
 [Kotest](https://) - Testing, property testing
@@ -21,7 +23,9 @@ Clean Arch app template written in kotlin.
 
 - App (DI)
 
-- UI
+- UI (Javafx/alternate presenter layer)
+
+- Android (UI)
 
 - Data (mapping, piping network, cache and persistence)
 
