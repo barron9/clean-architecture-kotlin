@@ -58,11 +58,10 @@ class View: Application() { // javafx window
         val javaVersion = System.getProperty("java.version")
         val javafxVersion = System.getProperty("javafx.version")
         val l = Label("Hello, JavaFX $javafxVersion, running on Java $javaVersion.")
-        val b = Button("Authorize")
+        val b = Button("Find")
         val tf = TextField()
-        //tf.textProperty().bind(Bindings.convert(l.textProperty()));
-        // l.textProperty().bind(Bindings.convert(tf.textProperty()));
-        tf.setPromptText("email address")
+
+        tf.setPromptText("Type A Car Make/Model/Year")
         val pw = PasswordField()
         pw.promptText = "password"
         val iv2 =
@@ -71,13 +70,14 @@ class View: Application() { // javafx window
         iv2.setPreserveRatio(true)
         iv2.setY(50.0)
         b.setMinWidth(300.0)
+        b.requestFocus()
         val root = GridPane()
         root.alignment = Pos.TOP_CENTER
         root.vgap = 20.0
         root.addRow(2, l)
         root.addRow(1, iv2)
         root.addRow(3, tf)
-        root.addRow(4, pw)
+       // root.addRow(4, pw)
         root.addRow(5, b)
         val scene = Scene(root, 640.0, 380.0)
 
@@ -93,7 +93,7 @@ class View: Application() { // javafx window
             }
         }
         _stage!!.scene = scene
-        _stage!!.title = "demo"
+        _stage!!.title = "Car Finder"
         _stage!!.show()
     }
 }

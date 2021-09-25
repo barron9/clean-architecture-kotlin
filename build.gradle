@@ -1,6 +1,19 @@
-
+buildscript {
+    ext {
+        kotlin_version = '1.5.31'
+    }
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.android.tools.build:gradle:4.0.0'
+    }
+}
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.5.31'
+
 }
 
 apply plugin: 'idea'
@@ -25,6 +38,8 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.37'
     kapt 'com.google.dagger:dagger-compiler:2.37'
 }
+
+
 
 
 
