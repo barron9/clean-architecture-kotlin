@@ -1,7 +1,7 @@
 package com.example.androidview
 
 import android.annotation.SuppressLint
-import android.support.v7.app.AppCompatActivity
+import android.app.Activity
 import android.os.Bundle
 import com.cachedata.DataCacheFactory
 import com.di.DaggerAppComp
@@ -12,7 +12,7 @@ import io.reactivex.schedulers.Schedulers
 import usecases.DefaultUseCase
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
     @Inject
     lateinit var dcf: DataCacheFactory
 
