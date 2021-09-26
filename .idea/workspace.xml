@@ -36,8 +36,15 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="gitignore">
-      <change afterPath="$PROJECT_DIR$/buildSrc/build.gradle" afterDir="false" />
+    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="migrate androidx">
+      <change afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/page1.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/page2.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/page3.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/androidUI/src/main/res/navigation/nav_file.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -48,17 +55,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9df1816d8703283b1f64d04a39cdef30fa9ba611" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f07866736216be0ee2aba49e392191aeae700a35" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/androidUI/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/androidTest/java/com/example/androidview/ExampleInstrumentedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/androidTest/java/com/example/androidview/ExampleInstrumentedTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/androidUI/src/main/kotlin/com/example/androidview/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/kotlin/com/example/androidview/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +106,7 @@
         <option value="Kotlin File" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
+        <option value="navigationResourceFile" />
       </list>
     </option>
   </component>
@@ -131,6 +133,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="ResourceManagerPrefKey.ResourceType" value="NAVIGATION" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -444,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632589710487</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="migrate androidx">
+      <created>1632663853328</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1632663853329</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -475,7 +485,8 @@
     <MESSAGE value="rxandroid &amp; viewbindng add" />
     <MESSAGE value="update readme" />
     <MESSAGE value="gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
+    <MESSAGE value="migrate androidx" />
+    <option name="LAST_COMMIT_MESSAGE" value="migrate androidx" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand>
