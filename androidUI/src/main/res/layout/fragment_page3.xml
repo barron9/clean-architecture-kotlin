@@ -3,4 +3,11 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".page3"/>
+             tools:context=".page3">
+    <TextView
+            android:text="go back page1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tv1" android:clickable="true"
+            android:textSize="34sp" android:textStyle="bold"/>
+
+</FrameLayout>

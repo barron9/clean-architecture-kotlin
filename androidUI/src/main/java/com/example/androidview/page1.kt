@@ -1,17 +1,17 @@
 package com.example.androidview
 
 import android.os.Bundle
+import android.view.*
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.example.androidview.databinding.ActivityMainBinding
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.androidview.databinding.FragmentPage1Binding
+import entities.CarMake
+import entities.CarResponse
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -19,46 +19,56 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class page1 : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
     private lateinit var bindingMain: FragmentPage1Binding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-
-    }
-
+    var carlist : MutableList<CarMake> = mutableListOf()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         bindingMain = FragmentPage1Binding.inflate(inflater)
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_page1, container, false)
+        PagestartViewModel.bs
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(::myhandler)
+        bindingMain.carlist.layoutManager = LinearLayoutManager(bindingMain.root.context, LinearLayoutManager.VERTICAL, false)
+        return bindingMain.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment page1.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            page1().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    fun myhandler (car: CarResponse?){
+      //  System.out.println("car res " + car?.Results!!.toMutableList())
+        carlist = car?.Results!!.toMutableList()
+        bindingMain.carlist.adapter = null
+        bindingMain.carlist.adapter =Adapter(carlist)
+
+    }
+
+}
+
+
+
+class Adapter(val cList: MutableList<CarMake>) : RecyclerView.Adapter<com.example.androidview.Adapter.ModelViewHolder>() {
+
+    class ModelViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val countryName: TextView = view.findViewById(R.id.carmake)
+        val capitalName: TextView = view.findViewById(R.id.carmodel)
+
+        fun bindItems(item: CarMake) {
+            countryName.setText(item.Make_Name)
+            capitalName.setText(item.Mfr_Name)
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ModelViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_car, parent, false)
+        return ModelViewHolder(view)
+    }
+
+    override fun getItemCount(): Int {
+        return cList.size
+    }
+
+    override fun onBindViewHolder(holder: ModelViewHolder, position: Int) {
+        holder.bindItems(cList.get(position))
     }
 }
