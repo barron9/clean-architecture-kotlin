@@ -4,8 +4,6 @@ import com.cachedata.DataCacheFactory
 import dagger.Binds
 import dagger.Module
 import interfaces.DataInterface
-import interfaces.NetworkInterface
-import network.APIService
 import javax.inject.Singleton
 
 @Module

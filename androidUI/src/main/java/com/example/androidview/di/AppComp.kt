@@ -7,10 +7,11 @@ import network.APIService
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [UseCaseModule::class,DataFactoryModule::class,NetworkModule::class])
+@Component(modules = [UseCaseModule::class, DataFactoryModule::class, NetworkModule::class])
 abstract class AppComp {
-   fun getNetwwork():NetworkInterface{
-      return APIService()
-   }
-   abstract fun inject(view: PagestartViewModel.Companion)
+    fun getNetwwork(): NetworkInterface {
+        return APIService()
+    }
+
+    abstract fun inject(view: PagestartViewModel.Companion)
 }

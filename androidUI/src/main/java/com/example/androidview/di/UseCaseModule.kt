@@ -3,8 +3,6 @@ package com.di
 
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
-import interfaces.DataInterface
 import interfaces.UsecaseExecutor
 import usecases.DefaultUseCase
 import javax.inject.Singleton
@@ -13,5 +11,5 @@ import javax.inject.Singleton
 abstract class UseCaseModule {
     @Binds
     @Singleton
-    abstract fun bindUseCase(dusecase:DefaultUseCase): UsecaseExecutor
+    abstract fun bindUseCase(dusecase: DefaultUseCase): UsecaseExecutor
 }

@@ -20,7 +20,7 @@ import io.reactivex.schedulers.Schedulers
  */
 class page1 : Fragment() {
     private lateinit var bindingMain: FragmentPage1Binding
-    var carlist : MutableList<CarMake> = mutableListOf()
+    var carlist: MutableList<CarMake> = mutableListOf()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,31 +31,32 @@ class page1 : Fragment() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(::myhandler)
-        bindingMain.carlist.layoutManager = LinearLayoutManager(bindingMain.root.context, LinearLayoutManager.VERTICAL, false)
+        bindingMain.carlist.layoutManager =
+            LinearLayoutManager(bindingMain.root.context, LinearLayoutManager.VERTICAL, false)
         return bindingMain.root
     }
 
-    fun myhandler (car: CarResponse?){
-      //  System.out.println("car res " + car?.Results!!.toMutableList())
+    fun myhandler(car: CarResponse?) {
+        //  System.out.println("car res " + car?.Results!!.toMutableList())
         carlist = car?.Results!!.toMutableList()
         bindingMain.carlist.adapter = null
-        bindingMain.carlist.adapter =Adapter(carlist)
+        bindingMain.carlist.adapter = Adapter(carlist)
 
     }
 
 }
 
 
-
-class Adapter(val cList: MutableList<CarMake>) : RecyclerView.Adapter<com.example.androidview.Adapter.ModelViewHolder>() {
+class Adapter(val cList: MutableList<CarMake>) :
+    RecyclerView.Adapter<com.example.androidview.Adapter.ModelViewHolder>() {
 
     class ModelViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val countryName: TextView = view.findViewById(R.id.carmake)
         val capitalName: TextView = view.findViewById(R.id.carmodel)
 
         fun bindItems(item: CarMake) {
-            countryName.setText(item.Make_Name)
-            capitalName.setText(item.Mfr_Name)
+            countryName.text = item.Make_Name
+            capitalName.text = item.Mfr_Name
         }
     }
 

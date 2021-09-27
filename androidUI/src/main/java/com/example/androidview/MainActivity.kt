@@ -11,7 +11,6 @@ import com.cachedata.DataCacheFactory
 import com.example.androidview.databinding.ActivityMainBinding
 import entities.Car
 import entities.CarResponse
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import usecases.DefaultUseCase
 import javax.inject.Inject
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingMain = ActivityMainBinding.inflate(layoutInflater)
-       // DaggerAppComp.create().inject(this)
+        // DaggerAppComp.create().inject(this)
         setContentView(bindingMain.root)
         if (Build.VERSION.SDK_INT > 9) {
             val policy: StrictMode.ThreadPolicy = StrictMode.ThreadPolicy.Builder().permitAll().build()
@@ -39,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     @SuppressLint("CheckResult")
-    fun present(){
+    fun present() {
 //        dcf.getCar()
 //            .subscribeOn(Schedulers.io())
 //            .observeOn(AndroidSchedulers.mainThread())
@@ -49,27 +48,29 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun consume(car: Car){
-      // bindingMain.postmsg.text = car.name
+    private fun consume(car: Car) {
+        // bindingMain.postmsg.text = car.name
     }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
-        menuInflater.inflate(R.menu.menu,menu)
+        menuInflater.inflate(R.menu.menu, menu)
         val search = menu?.findItem(R.id.app_bar_search)
         val searchView = search?.actionView as SearchView
         searchView.maxWidth = Integer.MAX_VALUE
         searchView.queryHint = "type a car maker"
-        searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
-                if(!p0.isNullOrEmpty())
-                    PagestartViewModel.call(p0!!)?.subscribeOn(Schedulers.io())?.subscribe()
+                if (!p0.isNullOrEmpty())
+                    PagestartViewModel.call(p0)?.subscribeOn(Schedulers.io())?.subscribe()
                 return true
             }
 
             override fun onQueryTextChange(p0: String?): Boolean {
                 return true
             }
-            fun myhandler (car: CarResponse?){
+
+            fun myhandler(car: CarResponse?) {
                 System.out.println("car res " + car?.Results)
             }
 
