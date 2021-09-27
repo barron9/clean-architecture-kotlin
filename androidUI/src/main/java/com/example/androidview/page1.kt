@@ -2,15 +2,19 @@ package com.example.androidview
 
 import android.os.Bundle
 import android.view.*
+import android.view.View.GONE
 import android.widget.TextView
+import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidview.databinding.FragmentPage1Binding
 import entities.CarMake
 import entities.CarResponse
+import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import java.util.*
 
 
 /**
@@ -41,7 +45,13 @@ class page1 : Fragment() {
         carlist = car?.Results!!.toMutableList()
         bindingMain.carlist.adapter = null
         bindingMain.carlist.adapter = Adapter(carlist)
+        vis(carlist.size)
+    }
 
+    fun vis(i:Int){
+        if (i <3) {bindingMain.logo.visibility=View.VISIBLE}else{
+            bindingMain.logo.visibility=View.GONE
+        }
     }
 
 }
