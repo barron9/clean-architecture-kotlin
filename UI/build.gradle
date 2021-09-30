@@ -1,3 +1,4 @@
+/*
 plugins {
     id 'org.jetbrains.kotlin.jvm'
     id 'org.openjfx.javafxplugin' version '0.0.10'
@@ -6,8 +7,7 @@ apply plugin: 'idea'
 apply plugin: 'kotlin'
 apply plugin: "kotlin-kapt"
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+
 
 repositories {
     mavenCentral()
@@ -37,4 +37,4 @@ test {
     useJUnitPlatform()
 }
 
-targetCompatibility = '11'
+targetCompatibility = '11'*/

@@ -1,5 +1,5 @@
 rootProject.name="cleanarch"
-include("ui")
+//include("ui")
 include("data")
 include("domain")
 include("persistence")
