@@ -15,6 +15,10 @@ fun Project.commonDep() {
 }
 
 fun Project.dataModuleDep() {
+    tasks.getByName("build").dependsOn("buildclean")
+    task("buildclean").run {
+        delete("${projectDir}/build/")
+    }
     dependencies {
         "implementation"(project(":domain"))
     }
@@ -33,7 +37,11 @@ fun Project.androidUIDep() {
     apply(plugin = "com.android.application")
     apply(plugin = "kotlin-android")
    // configure<AppExtension>("android") {
-
+    tasks.getByName("build").dependsOn("buildclean")
+    task("buildclean").run {
+        delete("${projectDir}/build/")
+     }
+  //  task("build").dependsOn("build2")
     //}
     dependencies {
         "implementation"(project(":data"))

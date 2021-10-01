@@ -1,10 +1,12 @@
 package com.example.androidview
 
+
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import android.os.StrictMode
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import com.cachedata.DataCacheFactory
@@ -28,6 +30,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingMain = ActivityMainBinding.inflate(layoutInflater)
+        setSupportActionBar(bindingMain.toolbar);
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
         // DaggerAppComp.create().inject(this)
         setContentView(bindingMain.root)
         if (Build.VERSION.SDK_INT > 9) {
@@ -75,6 +80,17 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            bindingMain.buttonxz.id -> {
+
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
         return true
     }
 }

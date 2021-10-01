@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Cleanarch" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Theme.Cleanarch" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
         <item name="android:forceDarkAllowed">false</item>
         <!-- Primary brand color. -->

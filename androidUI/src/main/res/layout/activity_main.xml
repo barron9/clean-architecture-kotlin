@@ -6,14 +6,65 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity"
-    >
+>
     <androidx.fragment.app.FragmentContainerView
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="0dp"
             android:layout_height="0dp" app:navGraph="@navigation/nav_file" app:defaultNavHost="true"
             android:id="@+id/fragmentContainerView" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout"/>
+    <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="50dp" android:id="@+id/view"
+            app:layout_constraintBottom_toBottomOf="@+id/fragmentContainerView"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:background="#FFC107"
+            android:clickable="true"
+            android:focusable="true" android:visibility="gone"/>
+    <TextView
+            android:text="SATIN AL ($0)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView2"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/view" app:layout_constraintTop_toTopOf="@+id/view"
+            android:textSize="24sp" android:textStyle="bold" android:visibility="gone"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@android:drawable/btn_star_big_on"
+            android:id="@+id/buttonxz"
+            app:layout_constraintBottom_toBottomOf="@+id/fragmentContainerView"
+            android:layout_marginBottom="38dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp" android:visibility="gone"/>
+    <TextView
+            android:text="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView"
+            android:textSize="16sp" app:layout_constraintEnd_toStartOf="@+id/buttonxz"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonxz" app:layout_constraintTop_toTopOf="@+id/buttonxz"
+            android:layout_marginEnd="8dp" android:visibility="gone"/>
+    <com.google.android.material.appbar.AppBarLayout android:layout_width="match_parent"
+                                                     android:layout_height="wrap_content"
+                                                     app:layout_constraintTop_toTopOf="parent"
+                                                     app:layout_constraintEnd_toEndOf="parent"
+                                                     android:id="@+id/appBarLayout"
+                                                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:theme="?attr/actionBarTheme"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    android:minHeight="?attr/actionBarSize" android:id="@+id/toolbar"
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

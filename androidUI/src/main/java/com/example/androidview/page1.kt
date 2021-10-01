@@ -6,6 +6,7 @@ import android.view.View.GONE
 import android.widget.TextView
 import androidx.core.view.size
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidview.databinding.FragmentPage1Binding
@@ -35,8 +36,9 @@ class page1 : Fragment() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(::myhandler)
-        bindingMain.carlist.layoutManager =
-            LinearLayoutManager(bindingMain.root.context, LinearLayoutManager.VERTICAL, false)
+
+        bindingMain.carlist.layoutManager = GridLayoutManager(bindingMain.root.context,4)
+            //LinearLayoutManager(bindingMain.root.context, LinearLayoutManager.VERTICAL, false)
         return bindingMain.root
     }
 

@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
-                                                   android:layout_height="wrap_content">
+                                                   android:layout_height="wrap_content" android:maxHeight="200dp">
 
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="70dp" app:srcCompat="@drawable/ic_android" android:id="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"/>
+    <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp" app:srcCompat="@android:drawable/btn_star"
+            android:id="@+id/imageView"
+            tools:layout_editor_absoluteX="18dp" tools:layout_editor_absoluteY="71dp" android:visibility="gone"/>
     <TextView
-            android:text="TextView"
+            android:text="TextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content" android:id="@+id/carmake"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="28dp" android:textStyle="bold" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginLeft="32dp" android:layout_marginStart="32dp" android:layout_marginRight="32dp"
-            android:layout_marginEnd="32dp"/>
+            android:textStyle="bold" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp" android:singleLine="false"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintTop_toBottomOf="@+id/imageView2"
+            android:textSize="8sp" android:textAlignment="center"/>
     <TextView
-            android:text="TextView"
-            android:layout_width="200dp"
-            android:layout_height="18dp" android:id="@+id/carmodel"
+            android:text="TextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextVTextViewTextViewTextViewTextViewTextViewTextViewTextViewTextViewiew"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" android:id="@+id/carmodel"
             app:layout_constraintStart_toStartOf="@+id/carmake" app:layout_constraintTop_toBottomOf="@+id/carmake"
-            android:textStyle="italic"/>
+            android:textStyle="italic" app:layout_constraintEnd_toEndOf="@+id/carmake" android:singleLine="false"
+            android:layout_marginTop="4dp" app:layout_constraintHorizontal_bias="0.0" android:textSize="8sp"
+            android:textAlignment="center"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
