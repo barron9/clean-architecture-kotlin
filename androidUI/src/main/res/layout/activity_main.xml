@@ -35,20 +35,21 @@
             android:id="@+id/buttonxz"
             app:layout_constraintBottom_toBottomOf="@+id/fragmentContainerView"
             android:layout_marginBottom="38dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp" android:visibility="gone"/>
+            android:layout_marginEnd="16dp" android:visibility="gone" android:layout_marginRight="16dp"/>
     <TextView
             android:text="0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/textView"
             android:textSize="16sp" app:layout_constraintEnd_toStartOf="@+id/buttonxz"
             app:layout_constraintBottom_toBottomOf="@+id/buttonxz" app:layout_constraintTop_toTopOf="@+id/buttonxz"
-            android:layout_marginEnd="8dp" android:visibility="gone"/>
+            android:layout_marginEnd="8dp" android:visibility="gone" android:layout_marginRight="8dp"/>
     <com.google.android.material.appbar.AppBarLayout android:layout_width="match_parent"
                                                      android:layout_height="wrap_content"
                                                      app:layout_constraintTop_toTopOf="parent"
                                                      app:layout_constraintEnd_toEndOf="parent"
                                                      android:id="@+id/appBarLayout"
-                                                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+                                                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                                                     app:elevation="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

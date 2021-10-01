@@ -19,11 +19,16 @@
             app:layout_constraintBottom_toBottomOf="@+id/carlist" app:layout_constraintTop_toTopOf="@+id/carlist"
             android:visibility="visible" app:srcCompat="@drawable/ic_launcher_foreground"/>
     <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="25dp" android:id="@+id/categories" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:background="#F3EEC8"/>
+    <androidx.recyclerview.widget.RecyclerView
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginRight="8dp"
             android:layout_marginEnd="8dp" android:id="@+id/carlist"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/categories" android:layout_marginTop="4dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

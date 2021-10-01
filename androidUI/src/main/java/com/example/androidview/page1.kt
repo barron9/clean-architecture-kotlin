@@ -2,9 +2,8 @@ package com.example.androidview
 
 import android.os.Bundle
 import android.view.*
-import android.view.View.GONE
+import android.widget.Button
 import android.widget.TextView
-import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.androidview.databinding.FragmentPage1Binding
 import entities.CarMake
 import entities.CarResponse
-import io.reactivex.Observable
+import entities.Categorie
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import java.util.*
@@ -39,6 +38,16 @@ class page1 : Fragment() {
 
         bindingMain.carlist.layoutManager = GridLayoutManager(bindingMain.root.context,4)
             //LinearLayoutManager(bindingMain.root.context, LinearLayoutManager.VERTICAL, false)
+        bindingMain.categories.layoutManager = LinearLayoutManager(bindingMain.root.context,LinearLayoutManager.HORIZONTAL,false)
+
+        val cs:MutableList<Categorie> = mutableListOf(
+            Categorie(0,"crysler"),
+            Categorie(1,"daimler"),
+            Categorie(2,"bmw"),
+            Categorie(3,"classic"),
+            Categorie(5,"muscle car"),
+        )
+        bindingMain.categories.adapter = CategorieAdapter(cs)
         return bindingMain.root
     }
 
@@ -83,5 +92,35 @@ class Adapter(val cList: MutableList<CarMake>) :
 
     override fun onBindViewHolder(holder: ModelViewHolder, position: Int) {
         holder.bindItems(cList.get(position))
+    }
+}
+
+
+class CategorieAdapter(val cList: MutableList<Categorie>) :
+    RecyclerView.Adapter<CategorieAdapter.ModelViewHolder>() {
+
+    class ModelViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val c_item: Button = view.findViewById(R.id.item)
+
+        fun bindItems(item: Categorie) {
+            c_item.text = item.c_name
+            c_item.setOnClickListener {
+                PagestartViewModel.call(item.c_name)?.subscribeOn(Schedulers.io())?.subscribe()
+            }
+        }
+
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ModelViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_ctg, parent, false)
+        return ModelViewHolder(view)
+    }
+
+    override fun getItemCount(): Int {
+        return cList.size
+    }
+
+    override fun onBindViewHolder(holder: ModelViewHolder, position: Int) {
+        holder.bindItems(cList[position])
     }
 }

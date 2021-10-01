@@ -15,29 +15,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="migrate kotlindsl">
-      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/6/161cab413096f9c3f1b377d45087e412bdb48ae5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/9/19a30ef8070ea5a5e0a47778e42b1bb381f8b916" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2de76fe596095547752776809407ba91c2bb6b95" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/6/56f802ad245011054b251ea30c25a21f0e5a63fd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/749edfcc96398253e5b3416184e95c46621da850" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7b398aab8a169d53aef43a68b2ca71511ca72c88" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7e7c3928bba006a6e7912d0fc5007d510d5d6659" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/82c6e63dd7daa0e0e5accead2453c61c0cfb9828" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9bb51bc0c825dd9cd9f3865faf922e420c2a1dcd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9df1816d8703283b1f64d04a39cdef30fa9ba611" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f5470ef43fd1acab01d54a63bdece9a90dec1b7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/aeac71c1bad9558bd2ed8d191cafc1792bbeba8d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/7/d72c8b69b8da0b3b02b699ccd509295dbd783baa" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/9/d90b697280fada81e52ec92d24725920f1cb087b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/dbcff70658daf80b53ce624f6adcaa529df5ed8d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/PanelView.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/androidUI/src/main/res/drawable/ic_android.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout-v21/panelview.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/panelview.xml" afterDir="false" />
+    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="ui update">
+      <change afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/item_ctg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -45,20 +24,15 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/35a8748b1b3e780b263cfcff9ec3e59d64f747dc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a4b9471793229c60c43d72dd614ab0d4ca745b43" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/3/c3c5e324468ad6fd150da74f9c75c78f09477df2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7e7c3928bba006a6e7912d0fc5007d510d5d6659" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/7/c7d29e0fdab8a2ad3afd36144e2388ec15bf8216" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f38f14a271678a5b5900d5ff164ffaefeccaccfd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/page1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/page1.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/activity_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/item_car.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/item_car.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/menu/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/menu/menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/values/themes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildSrc/src/main/java/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/src/main/java/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/kotlin/entities/CarMake.kt" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/kotlin/entities/CarMake.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,8 +150,8 @@
         <option value="navigationResourceFile" />
         <option value="resourceFile" />
         <option value="Class" />
-        <option value="layoutResourceFile" />
         <option value="Kotlin Class" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
@@ -594,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632962799830</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="ui update">
+      <created>1633119494257</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1633119494257</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -642,7 +623,8 @@
     <MESSAGE value="reformat" />
     <MESSAGE value="ui fixes" />
     <MESSAGE value="migrate kotlindsl" />
-    <option name="LAST_COMMIT_MESSAGE" value="migrate kotlindsl" />
+    <MESSAGE value="ui update" />
+    <option name="LAST_COMMIT_MESSAGE" value="ui update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

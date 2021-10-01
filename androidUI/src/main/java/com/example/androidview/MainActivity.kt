@@ -31,14 +31,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindingMain = ActivityMainBinding.inflate(layoutInflater)
         setSupportActionBar(bindingMain.toolbar);
-        supportActionBar?.setDisplayShowTitleEnabled(false)
+       // supportActionBar?.setDisplayShowTitleEnabled(false)
+        bindingMain.toolbar.elevation = 0f
 
         // DaggerAppComp.create().inject(this)
         setContentView(bindingMain.root)
-        if (Build.VERSION.SDK_INT > 9) {
-            val policy: StrictMode.ThreadPolicy = StrictMode.ThreadPolicy.Builder().permitAll().build()
-            StrictMode.setThreadPolicy(policy)
-        }
+
+        val policy: StrictMode.ThreadPolicy = StrictMode.ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
+
         present()
     }
 
