@@ -1,5 +1,6 @@
 package com.example.androidview
 
+import android.annotation.SuppressLint
 import android.os.Looper
 import android.util.Log
 import androidx.annotation.WorkerThread
@@ -19,11 +20,18 @@ class PagestartViewModel : ViewModel() {
         val service: NetworkInterface = dagger.getNetwwork()
         var data: Observable<CarResponse?>? = service.GetMakeForManufacturer("a")
         var bs: BehaviorSubject<CarResponse?> = BehaviorSubject.create<CarResponse?>();
+        var loader: BehaviorSubject<Boolean?> = BehaviorSubject.create<Boolean?>();
 
+        @SuppressLint("CheckResult")
         fun call(q: String): BehaviorSubject<CarResponse?>? {
             Log.e("Pageviewmodel",Thread.currentThread().name)
+            loader.onNext(true)
             service.GetMakeForManufacturer(q)
-                .subscribe({s-> bs.onNext(s!!); Log.e("Pageviewmodel", Thread.currentThread().name) })
+                .subscribe { s ->
+                    bs.onNext(s!!);
+                    loader.onNext(false);
+                    Log.e("Pageviewmodel", Thread.currentThread().name)
+                }
             return bs
         }
 

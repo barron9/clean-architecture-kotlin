@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="25dp" android:id="@+id/categories" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:background="#F3EEC8"/>
+            android:background="#454544"/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -30,5 +30,14 @@
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginRight="8dp"
             android:layout_marginEnd="8dp" android:id="@+id/carlist"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/categories" android:layout_marginTop="4dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/categories" android:layout_marginTop="4dp">
+    </androidx.recyclerview.widget.RecyclerView>
+    <ProgressBar
+            style="@android:style/Widget.Holo.ProgressBar.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            app:layout_constraintEnd_toEndOf="@+id/carlist" app:layout_constraintStart_toStartOf="@+id/carlist"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/categories"
+            android:indeterminate="true" android:visibility="invisible"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

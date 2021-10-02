@@ -1,8 +1,12 @@
 package com.example.androidview
 
+import android.annotation.SuppressLint
+import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -27,15 +31,23 @@ import java.util.*
 class page1 : Fragment() {
     private lateinit var bindingMain: FragmentPage1Binding
     var carlist: MutableList<CarMake> = mutableListOf()
+    @SuppressLint("CheckResult")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
         bindingMain = FragmentPage1Binding.inflate(inflater)
+        PagestartViewModel.loader
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(::handelloader)
+
         PagestartViewModel.bs
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnNext { Log.e("Pageviewmodel-doonnext","dooennext") }
+            .doOnError {  }
             .subscribe(::myhandler)
 
         bindingMain.carlist.layoutManager = GridLayoutManager(bindingMain.root.context,4)
@@ -52,7 +64,12 @@ class page1 : Fragment() {
         bindingMain.categories.adapter = CategorieAdapter(cs)
         return bindingMain.root
     }
-
+    fun handelloader(res:Boolean?){
+        when (res){
+            true ->bindingMain.progressBar.visibility = VISIBLE
+            false->bindingMain.progressBar.visibility = INVISIBLE
+        }
+    }
     fun myhandler(car: CarResponse?) {
         //  System.out.println("car res " + car?.Results!!.toMutableList())
         carlist = car?.Results!!.toMutableList()

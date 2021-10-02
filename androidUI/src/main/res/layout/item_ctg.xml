@@ -11,5 +11,5 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             android:text="categorie_item" app:layout_constraintEnd_toEndOf="parent" android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"/>
+            android:layout_marginStart="16dp" android:textColor="#EAEAEA"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

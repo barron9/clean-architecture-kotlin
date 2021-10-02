@@ -15,7 +15,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="ui update">
+    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="rx threading fix">
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -23,13 +23,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5f4f2215fb13b443c3a7fa9407fa10085a320f8d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7edd8f1497167aaf51c4f8b180eb82d42bf730e1" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/PagestartViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/PagestartViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/page1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/page1.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network/src/main/kotlin/APIService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/network/src/main/kotlin/APIService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/item_ctg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/item_ctg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -579,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633127935477</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="rx threading fix">
+      <created>1633183325288</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1633183325288</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -628,7 +633,8 @@
     <MESSAGE value="ui fixes" />
     <MESSAGE value="migrate kotlindsl" />
     <MESSAGE value="ui update" />
-    <option name="LAST_COMMIT_MESSAGE" value="ui update" />
+    <MESSAGE value="rx threading fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="rx threading fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
