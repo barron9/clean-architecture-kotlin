@@ -13,8 +13,10 @@ import com.cachedata.DataCacheFactory
 import com.example.androidview.databinding.ActivityMainBinding
 import entities.Car
 import entities.CarResponse
+import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 import usecases.DefaultUseCase
+import java.util.*
 import javax.inject.Inject
 
 
@@ -67,8 +69,14 @@ class MainActivity : AppCompatActivity() {
         searchView.queryHint = "type a car maker"
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
-                if (!p0.isNullOrEmpty())
-                    PagestartViewModel.call(p0)?.subscribeOn(Schedulers.io())?.subscribe()
+               if (!p0.isNullOrEmpty())
+                   Observable.create<Unit> {
+                       println("Pageviewmodel-test-"+Thread.currentThread().name)
+                       PagestartViewModel.call(p0)!!
+                   }
+                        .subscribeOn(Schedulers.single())!!
+                        .observeOn(Schedulers.newThread())!!
+                        .subscribe()
                 return true
             }
 

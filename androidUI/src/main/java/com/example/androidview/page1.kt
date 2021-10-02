@@ -1,6 +1,7 @@
 package com.example.androidview
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.Button
 import android.widget.TextView
@@ -12,6 +13,7 @@ import com.example.androidview.databinding.FragmentPage1Binding
 import entities.CarMake
 import entities.CarResponse
 import entities.Categorie
+import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import java.util.*
@@ -32,7 +34,7 @@ class page1 : Fragment() {
 
         bindingMain = FragmentPage1Binding.inflate(inflater)
         PagestartViewModel.bs
-            .subscribeOn(Schedulers.io())
+            .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(::myhandler)
 
@@ -41,7 +43,7 @@ class page1 : Fragment() {
         bindingMain.categories.layoutManager = LinearLayoutManager(bindingMain.root.context,LinearLayoutManager.HORIZONTAL,false)
 
         val cs:MutableList<Categorie> = mutableListOf(
-            Categorie(0,"crysler"),
+            Categorie(0,"ford"),
             Categorie(1,"daimler"),
             Categorie(2,"bmw"),
             Categorie(3,"classic"),
@@ -105,7 +107,11 @@ class CategorieAdapter(val cList: MutableList<Categorie>) :
         fun bindItems(item: Categorie) {
             c_item.text = item.c_name
             c_item.setOnClickListener {
-                PagestartViewModel.call(item.c_name)?.subscribeOn(Schedulers.io())?.subscribe()
+                Observable.create<Unit> {
+                    println("Pageviewmodel-test-"+Thread.currentThread().name)
+                    PagestartViewModel.call(item.c_name)!!
+                }
+               .subscribeOn(Schedulers.single())?.subscribe()
             }
         }
 

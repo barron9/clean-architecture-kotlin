@@ -1,6 +1,5 @@
 package network
 
-import entities.CarMake
 import entities.CarResponse
 import interfaces.NetworkInterface
 import io.reactivex.Single
@@ -41,8 +40,8 @@ class APIService @Inject constructor() : NetworkInterface {
    // }
 
     override fun GetMakeForManufacturer(make: String): Observable<CarResponse?> {
+        System.out.println("Pageviewmodel ," +Thread.currentThread().name)
         var res= getservice().GetMakeForManufacturer(make).execute()
-
         return Single.just(res.body()!!).toObservable()
     }
 
