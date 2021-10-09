@@ -1,7 +1,7 @@
 package com.example.androidview
 
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
-import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -31,6 +31,7 @@ import java.util.*
 class page1 : Fragment() {
     private lateinit var bindingMain: FragmentPage1Binding
     var carlist: MutableList<CarMake> = mutableListOf()
+
     @SuppressLint("CheckResult")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,30 +47,35 @@ class page1 : Fragment() {
         PagestartViewModel.bs
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
-            .doOnNext { Log.e("Pageviewmodel-doonnext","dooennext") }
-            .doOnError {  }
+            .doOnNext { Log.e("Pageviewmodel-doonnext", "dooennext") }
+            .doOnError { }
             .subscribe(::myhandler)
 
-        bindingMain.carlist.layoutManager = GridLayoutManager(bindingMain.root.context,4)
-            //LinearLayoutManager(bindingMain.root.context, LinearLayoutManager.VERTICAL, false)
-        bindingMain.categories.layoutManager = LinearLayoutManager(bindingMain.root.context,LinearLayoutManager.HORIZONTAL,false)
+        bindingMain.carlist.layoutManager = GridLayoutManager(bindingMain.root.context, 4)
+        //LinearLayoutManager(bindingMain.root.context, LinearLayoutManager.VERTICAL, false)
+        bindingMain.categories.layoutManager =
+            LinearLayoutManager(bindingMain.root.context, LinearLayoutManager.HORIZONTAL, false)
 
-        val cs:MutableList<Categorie> = mutableListOf(
-            Categorie(0,"ford"),
-            Categorie(1,"daimler"),
-            Categorie(2,"bmw"),
-            Categorie(3,"classic"),
-            Categorie(5,"muscle car"),
+         bindingMain.carlist.addOnScrollListener(myscrolllistener(binding = bindingMain))
+
+        val cs: MutableList<Categorie> = mutableListOf(
+            Categorie(0, "ford"),
+            Categorie(1, "daimler"),
+            Categorie(2, "bmw"),
+            Categorie(3, "classic"),
+            Categorie(5, "roads"),
         )
-        bindingMain.categories.adapter = CategorieAdapter(cs)
+        bindingMain.categories.adapter = CategorieAdapter(cs, bindingMain.categories)
         return bindingMain.root
     }
-    fun handelloader(res:Boolean?){
-        when (res){
-            true ->bindingMain.progressBar.visibility = VISIBLE
-            false->bindingMain.progressBar.visibility = INVISIBLE
+
+    fun handelloader(res: Boolean?) {
+        when (res) {
+            true -> bindingMain.progressBar.visibility = VISIBLE
+            false -> bindingMain.progressBar.visibility = INVISIBLE
         }
     }
+
     fun myhandler(car: CarResponse?) {
         //  System.out.println("car res " + car?.Results!!.toMutableList())
         carlist = car?.Results!!.toMutableList()
@@ -78,14 +84,38 @@ class page1 : Fragment() {
         vis(carlist.size)
     }
 
-    fun vis(i:Int){
-        if (i <3) {bindingMain.logo.visibility=View.VISIBLE}else{
-            bindingMain.logo.visibility=View.GONE
+    fun vis(i: Int) {
+        if (i < 3) {
+            bindingMain.logo.visibility = View.VISIBLE
+        } else {
+            bindingMain.logo.visibility = View.GONE
         }
     }
 
 }
 
+class myscrolllistener(private val binding: FragmentPage1Binding) : RecyclerView.OnScrollListener() {
+    override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+        super.onScrollStateChanged(recyclerView, newState)
+    }
+    override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+        super.onScrolled(recyclerView, dx, dy)
+        Log.e("scrollxy", "dx:${dx} , dy:${dy}")
+        binding.categories.layoutParams = binding.categories.layoutParams.apply {
+
+            this.height = this.height - dy
+        }
+
+        /*   else -> binding.categories.layoutParams = binding.categories.layoutParams.apply {
+               if(this.height<100)
+                   this.height = this.height + dy
+               else
+                   this.height = 100
+
+           }*/
+    }
+    //binding.categories.invalidate()
+}
 
 class Adapter(val cList: MutableList<CarMake>) :
     RecyclerView.Adapter<com.example.androidview.Adapter.ModelViewHolder>() {
@@ -115,20 +145,22 @@ class Adapter(val cList: MutableList<CarMake>) :
 }
 
 
-class CategorieAdapter(val cList: MutableList<Categorie>) :
+class CategorieAdapter(val cList: MutableList<Categorie>, val recycle: RecyclerView) :
     RecyclerView.Adapter<CategorieAdapter.ModelViewHolder>() {
 
-    class ModelViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ModelViewHolder(view: View, val RC: RecyclerView, val list: MutableList<Categorie>) :
+        RecyclerView.ViewHolder(view) {
         val c_item: Button = view.findViewById(R.id.item)
-
         fun bindItems(item: Categorie) {
             c_item.text = item.c_name
             c_item.setOnClickListener {
+                RC.smoothScrollToPosition(0)
+                RC.smoothScrollToPosition(list.indexOf(item))
                 Observable.create<Unit> {
-                    println("Pageviewmodel-test-"+Thread.currentThread().name)
+                    println("Pageviewmodel-test-" + Thread.currentThread().name)
                     PagestartViewModel.call(item.c_name)!!
                 }
-               .subscribeOn(Schedulers.single())?.subscribe()
+                    .subscribeOn(Schedulers.single())?.subscribe()
             }
         }
 
@@ -136,7 +168,7 @@ class CategorieAdapter(val cList: MutableList<Categorie>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ModelViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_ctg, parent, false)
-        return ModelViewHolder(view)
+        return ModelViewHolder(view, recycle, cList)
     }
 
     override fun getItemCount(): Int {

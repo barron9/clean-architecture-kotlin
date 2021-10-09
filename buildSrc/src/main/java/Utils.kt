@@ -1,8 +1,5 @@
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.apply
-import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.kotlin
-import org.gradle.kotlin.dsl.project
+import org.gradle.kotlin.dsl.*
 
 fun Project.commonDep() {
     dependencies {
@@ -48,6 +45,10 @@ fun Project.androidUIDep() {
         "implementation"(project(":domain"))
         "implementation"(project(":network"))
 
+        "kapt"("androidx.room:room-compiler:2.3.0")
+        "implementation"("androidx.room:room-ktx:2.3.0")
+        "implementation"("androidx.room:room-runtime:2.3.0")
+
         "implementation"("com.google.dagger:dagger:2.37")
         "implementation"("androidx.navigation:navigation-fragment-ktx:2.3.0")
         "implementation"("androidx.navigation:navigation-ui-ktx:2.3.0")
@@ -61,7 +62,7 @@ fun Project.androidUIDep() {
       //  "implementation"("org.openjfx:javafx:11")
      //   "implementation"("org.openjfx:javafx-controls:11")
 
-        "implementation"("org.jetbrains.kotlin:kotlin-stdlib:1.5.10")
+      //  "implementation"("org.jetbrains.kotlin:kotlin-stdlib:1.5.10")
 
         "implementation"("androidx.appcompat:appcompat:1.2.0")
         "implementation"("androidx.constraintlayout:constraintlayout:1.1.3")

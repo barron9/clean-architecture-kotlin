@@ -20,9 +20,9 @@
             android:visibility="visible" app:srcCompat="@drawable/ic_launcher_foreground"/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="25dp" android:id="@+id/categories" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="100dp" android:id="@+id/categories" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:background="#454544"/>
+    />
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="0dp"
             android:layout_height="0dp"
