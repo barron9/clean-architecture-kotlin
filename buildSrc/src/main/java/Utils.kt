@@ -1,5 +1,7 @@
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.*
+import org.gradle.kotlin.dsl.apply
+import org.gradle.kotlin.dsl.dependencies
+import org.gradle.kotlin.dsl.project
 
 fun Project.commonDep() {
     dependencies {
@@ -68,6 +70,7 @@ fun Project.androidUIDep() {
 
         "implementation"("androidx.appcompat:appcompat:1.2.0")
         "implementation"("androidx.constraintlayout:constraintlayout:2.1.1")
+        "implementation"("com.google.android.material:material:1.5.0-alpha04")
         "testImplementation"("junit:junit:4.+")
         "androidTestImplementation"("androidx.test.ext:junit:1.1.1")
         "androidTestImplementation"("androidx.test.espresso:espresso-core:3.1.0")

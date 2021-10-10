@@ -3,6 +3,7 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
+        <device id="Nexus 7" />
         <device id="pixel_2_xl" />
         <device id="pixel_2" />
       </config>
@@ -18,10 +19,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="reformat">
-      <change afterPath="$PROJECT_DIR$/androidUI/src/main/res/drawable/red1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/androidUI/src/main/res/drawable/red2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/androidUI/src/main/res/xml/activity_main_scene.xml" afterDir="false" />
+    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="motionlayout update">
+      <change afterPath="$PROJECT_DIR$/androidUI/src/main/res/menu/bottom_menu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -29,15 +28,17 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/features/CarListings/CategorieAdapterAlt.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/features/CarListings/CategorieAdapterAlt.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/drawable/button_shape.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/drawable/button_shape.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/item_ctg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/item_ctg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/xml/activity_main_xml_constraintlayout_scene.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/xml/fragment_page1_scene.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/xml/fragment_page1_scene.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/src/main/java/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/src/main/java/Utils.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,10 +154,10 @@
         <option value="Kotlin File" />
         <option value="navigationResourceFile" />
         <option value="layoutResourceFile" />
-        <option value="resourceFile" />
         <option value="Class" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -674,7 +675,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633842140355</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="motionlayout update">
+      <created>1633846643408</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1633846643408</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -701,7 +709,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="domain gradle file" />
     <MESSAGE value="name change" />
     <MESSAGE value="setcar method cng" />
     <MESSAGE value="shouldSpec tests" />
@@ -726,7 +733,8 @@
     <MESSAGE value="categorie adapter change" />
     <MESSAGE value="motion layout added" />
     <MESSAGE value="reformat" />
-    <option name="LAST_COMMIT_MESSAGE" value="reformat" />
+    <MESSAGE value="motionlayout update" />
+    <option name="LAST_COMMIT_MESSAGE" value="motionlayout update" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

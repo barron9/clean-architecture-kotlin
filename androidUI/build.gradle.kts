@@ -10,13 +10,13 @@ repositories {
     mavenCentral()
 }
 android {
-    compileSdkVersion(30)
+    compileSdkVersion(31)
 
     defaultConfig {
         applicationId ("com.example.androidview")
-        minSdkVersion (16)
-        targetSdkVersion (30)
-        versionCode (1)
+        minSdkVersion(16)
+        targetSdkVersion(31)
+        versionCode(1)
         versionName ("1.0")
         multiDexEnabled=true
 
