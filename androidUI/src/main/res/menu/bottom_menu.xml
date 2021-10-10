@@ -4,14 +4,15 @@
 
     <item
         android:icon="@drawable/outline_animation_24"
-        android:title="Item"
+        android:title="Home"
+        app:showAsAction="always" />
+
+    <item
+        android:icon="@drawable/outline_animation_24"
+        android:title="Cart"
         app:showAsAction="always" />
     <item
         android:icon="@drawable/outline_animation_24"
-        android:title="Item"
-        app:showAsAction="always" />
-    <item
-        android:icon="@drawable/outline_animation_24"
-        android:title="Item"
+        android:title="Account"
         app:showAsAction="always" />
 </menu>

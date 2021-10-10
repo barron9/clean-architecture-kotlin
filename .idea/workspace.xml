@@ -19,8 +19,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="motionlayout update">
-      <change afterPath="$PROJECT_DIR$/androidUI/src/main/res/menu/bottom_menu.xml" afterDir="false" />
+    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="animicon">
+      <change afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/repository/AppRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/repository/Resource.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -28,17 +29,15 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/values/themes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildSrc/src/main/java/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/src/main/java/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/di/AppComp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/di/AppComp.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/di/DataFactoryModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/di/DataFactoryModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/features/CarListings/CarListingViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/features/CarListings/CarListingViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/persistance/CarDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/persistance/CarDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/item_car.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/item_car.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/menu/bottom_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/menu/bottom_menu.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,8 +155,8 @@
         <option value="layoutResourceFile" />
         <option value="Class" />
         <option value="Kotlin Interface" />
-        <option value="Kotlin Class" />
         <option value="resourceFile" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -682,7 +681,21 @@
       <option name="project" value="LOCAL" />
       <updated>1633846643408</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="material-bottom nav add">
+      <created>1633886143542</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1633886143542</updated>
+    </task>
+    <task id="LOCAL-00040" summary="animicon">
+      <created>1633886191857</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1633886191857</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -709,8 +722,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="name change" />
-    <MESSAGE value="setcar method cng" />
     <MESSAGE value="shouldSpec tests" />
     <MESSAGE value="add ui-target 11" />
     <MESSAGE value="add androidUI/App as seperate UI layer" />
@@ -734,7 +745,9 @@
     <MESSAGE value="motion layout added" />
     <MESSAGE value="reformat" />
     <MESSAGE value="motionlayout update" />
-    <option name="LAST_COMMIT_MESSAGE" value="motionlayout update" />
+    <MESSAGE value="material-bottom nav add" />
+    <MESSAGE value="animicon" />
+    <option name="LAST_COMMIT_MESSAGE" value="animicon" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
