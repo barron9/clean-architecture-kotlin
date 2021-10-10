@@ -15,21 +15,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="adapter update">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="livedata added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/PagestartViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/Page1ViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/di/AppComp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/di/AppComp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/page1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/Page1.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/navigation/nav_file.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/navigation/nav_file.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/Page1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/Page1.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -607,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633833963049</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="livedata added">
+      <created>1633835130677</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1633835130677</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -634,7 +629,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="javafx windows added to view" />
     <MESSAGE value="memdb namecng" />
     <MESSAGE value="networklayer /retrofit add" />
     <MESSAGE value="add dummy tests" />
@@ -659,7 +653,8 @@
     <MESSAGE value="loader added for retrofit" />
     <MESSAGE value="basic persistence added w.roomdb" />
     <MESSAGE value="adapter update" />
-    <option name="LAST_COMMIT_MESSAGE" value="adapter update" />
+    <MESSAGE value="livedata added" />
+    <option name="LAST_COMMIT_MESSAGE" value="livedata added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

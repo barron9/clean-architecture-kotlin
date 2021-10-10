@@ -37,29 +37,43 @@ class Page1 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        //viewbinding
+
         bindingMain = FragmentPage1Binding.inflate(inflater)
+
+        //carlist adapter init
+
         carListAdapter = CarListAdapter()
+
+        //** alternate - viewmodel / livedata
+
+        Page1ViewModel.resultdata.observe(this@Page1.viewLifecycleOwner) {
+            bindingMain.apply{
+                vis(it.size)
+                carListAdapter.submitList(it)
+            }
+        }
+
+        // @ends
+
+        //rxjava alternate
 
         Page1ViewModel.loader
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(::handelloader)
 
-        //** alternate - viewmodel / livedata
-
-        Page1ViewModel.resultdata.observe(this@Page1.viewLifecycleOwner) {
-            bindingMain.apply{
-                carListAdapter.submitList(it)
-            }
-        }
-
-        // @ends
         Page1ViewModel.bs
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnNext { Log.e("Pageviewmodel-doonnext", "dooennext") }
             .doOnError { }
             .subscribe(::myhandler)
+
+        //rxjava alternate @ends
+
+
+        //binding to views
 
         bindingMain.apply {
             carlist.apply {
@@ -90,15 +104,7 @@ class Page1 : Fragment() {
     }
 
     fun myhandler(car: CarResponse?) {
-        //  System.out.println("car res " + car?.Results!!.toMutableList())
-        //carlist = car?.Results!!.toMutableList()
-        //bindingMain.carlist.adapter = null
-       // bindingMain.carlist.adapter = Adapter(carlist)
         bindingMain.carlist.adapter = carListAdapter
-        //bindingMain.apply{
-         //   carListAdapter.submitList(car?.Results!!.toMutableList())
-       // }
-
         vis(carlist.size)
     }
 
@@ -110,35 +116,6 @@ class Page1 : Fragment() {
         }
     }
 
-}
-
-
-
-class Adapter(val cList: MutableList<CarMake>) :
-    RecyclerView.Adapter<com.example.androidview.Adapter.ModelViewHolder>() {
-
-    class ModelViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val countryName: TextView = view.findViewById(R.id.carmake)
-        val capitalName: TextView = view.findViewById(R.id.carmodel)
-
-        fun bindItems(item: CarMake) {
-            countryName.text = item.Make_Name
-            capitalName.text = item.Mfr_Name
-        }
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ModelViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_car, parent, false)
-        return ModelViewHolder(view)
-    }
-
-    override fun getItemCount(): Int {
-        return cList.size
-    }
-
-    override fun onBindViewHolder(holder: ModelViewHolder, position: Int) {
-        holder.bindItems(cList.get(position))
-    }
 }
 
 
