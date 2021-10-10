@@ -1,0 +1,6 @@
+
+6kotlin:S125#"Remove this commented out code.(»¾èÑ
+;kotlin:S1251"Remove this commented out code.(ÕÈ öýÿÿÿÿ
+Ikotlin:S1172:",Remove this unused function parameter "car".(Œ×•Žúÿÿÿÿ
+Ikotlin:S1144:",Remove this unused private "consume" method.(Œ×•Žúÿÿÿÿ
+bkotlin:S1763_"JRefactor this piece of code to not have any dead code after this "return".(°ªÒ¶

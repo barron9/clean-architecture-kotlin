@@ -5,8 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.androidview.databinding.FragmentPage1Binding
 import com.example.androidview.databinding.ItemCtgBinding
 import entities.Categorie
+import io.reactivex.Observable
+import io.reactivex.schedulers.Schedulers
 
 class CategorieAdapterAlt : ListAdapter<Categorie, CategorieAdapterAlt.CategorieViewHolder>(CtgComparator()) {
 
@@ -21,9 +24,18 @@ class CategorieAdapterAlt : ListAdapter<Categorie, CategorieAdapterAlt.Categorie
             holder.bind(current)
         }
     }
+
     class CategorieViewHolder(private val binding: ItemCtgBinding) : RecyclerView.ViewHolder(binding.root){
+
         fun bind(ctg: Categorie){
             binding.item.text = ctg.c_name
+            binding.item.setOnClickListener {
+                Observable.create<Unit> {
+                    Page1ViewModel.call(ctg.c_name)!!
+                }
+                    .subscribeOn(Schedulers.single())
+                    ?.subscribe()
+            }
         }
     }
 

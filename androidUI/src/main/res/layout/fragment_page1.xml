@@ -1,43 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   xmlns:tools="http://schemas.android.com/tools"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="match_parent"
-                                                   tools:context=".features.CarListings.Page1"
-                                                   android:clipToPadding="false"
->
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    app:layoutDescription="@xml/fragment_page1_scene"
+    tools:context=".features.CarListings.Page1">
 
     <!-- TODO: Update blank fragment layout -->
 
 
     <ImageView
-            android:src="@drawable/ic_launcher_foreground"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/logo"
-            app:layout_constraintEnd_toEndOf="@+id/carlist" app:layout_constraintStart_toStartOf="@+id/carlist"
-            app:layout_constraintBottom_toBottomOf="@+id/carlist" app:layout_constraintTop_toTopOf="@+id/carlist"
-            android:visibility="visible" app:srcCompat="@drawable/ic_launcher_foreground"/>
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_foreground"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/carlist"
+        app:layout_constraintEnd_toEndOf="@+id/carlist"
+        app:layout_constraintStart_toStartOf="@+id/carlist"
+        app:layout_constraintTop_toTopOf="@+id/carlist"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
     <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="100dp" android:id="@+id/categories" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-    />
+        tools:listitem="@layout/item_ctg"
+        android:clipToPadding="false"
+        android:id="@+id/categories"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginRight="8dp"
-            android:layout_marginEnd="8dp" android:id="@+id/carlist"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toBottomOf="@+id/categories" android:layout_marginTop="4dp">
-    </androidx.recyclerview.widget.RecyclerView>
+        tools:listitem="@layout/item_car"
+        android:id="@+id/carlist"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categories"></androidx.recyclerview.widget.RecyclerView>
+
     <ProgressBar
-            style="@android:style/Widget.Holo.ProgressBar.Large"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/progressBar"
-            app:layout_constraintEnd_toEndOf="@+id/carlist" app:layout_constraintStart_toStartOf="@+id/carlist"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/categories"
-            android:indeterminate="true" android:visibility="invisible"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.Holo.ProgressBar.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/carlist"
+        app:layout_constraintStart_toStartOf="@+id/carlist"
+        app:layout_constraintTop_toBottomOf="@+id/categories" />
+</androidx.constraintlayout.motion.widget.MotionLayout>
