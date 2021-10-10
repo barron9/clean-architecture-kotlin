@@ -9,8 +9,8 @@ import androidx.room.Query
 interface CarDao {
     // When returning LiveData, you should not use a suspend function because they are incompatible (and not needed).
     @Query("SELECT * FROM car")
-    fun getCars() : LiveData<List<Car>>
+    fun getCars(): LiveData<List<Car>>
 
     @Insert
-    fun addCar(car:Car)
+    fun addCar(car: Car)
 }

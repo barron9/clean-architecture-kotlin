@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:clipToPadding="false"
     app:layoutDescription="@xml/fragment_page1_scene"
-    tools:context=".features.CarListings.Page1">
+    tools:context=".features.CarListings.CarListing">
 
     <!-- TODO: Update blank fragment layout -->
 

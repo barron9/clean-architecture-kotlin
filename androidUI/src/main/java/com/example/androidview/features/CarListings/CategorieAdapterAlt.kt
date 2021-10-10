@@ -5,16 +5,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.androidview.databinding.FragmentPage1Binding
 import com.example.androidview.databinding.ItemCtgBinding
 import entities.Categorie
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 
-class CategorieAdapterAlt : ListAdapter<Categorie, CategorieAdapterAlt.CategorieViewHolder>(CtgComparator()) {
+class CategorieAdapterAlt :
+    ListAdapter<Categorie, CategorieAdapterAlt.CategorieViewHolder>(CtgComparator()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategorieViewHolder {
-        val binding = ItemCtgBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = ItemCtgBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CategorieViewHolder(binding)
     }
 
@@ -25,13 +25,14 @@ class CategorieAdapterAlt : ListAdapter<Categorie, CategorieAdapterAlt.Categorie
         }
     }
 
-    class CategorieViewHolder(private val binding: ItemCtgBinding) : RecyclerView.ViewHolder(binding.root){
+    class CategorieViewHolder(private val binding: ItemCtgBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(ctg: Categorie){
+        fun bind(ctg: Categorie) {
             binding.item.text = ctg.c_name
             binding.item.setOnClickListener {
                 Observable.create<Unit> {
-                    Page1ViewModel.call(ctg.c_name)!!
+                    CarListingViewModel.call(ctg.c_name)!!
                 }
                     .subscribeOn(Schedulers.single())
                     ?.subscribe()
@@ -40,7 +41,8 @@ class CategorieAdapterAlt : ListAdapter<Categorie, CategorieAdapterAlt.Categorie
     }
 
     class CtgComparator : DiffUtil.ItemCallback<Categorie>() {
-        override fun areItemsTheSame(oldItem: Categorie, newItem: Categorie) = oldItem.id == newItem.id
+        override fun areItemsTheSame(oldItem: Categorie, newItem: Categorie) =
+            oldItem.id == newItem.id
 
         override fun areContentsTheSame(oldItem: Categorie, newItem: Categorie) = oldItem == newItem
 

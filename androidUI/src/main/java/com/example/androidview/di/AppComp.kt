@@ -1,6 +1,6 @@
 package com.di
 
-import com.example.androidview.features.CarListings.Page1ViewModel
+import com.example.androidview.features.CarListings.CarListingViewModel
 import dagger.Component
 import interfaces.NetworkInterface
 import network.APIService
@@ -13,5 +13,5 @@ abstract class AppComp {
         return APIService()
     }
 
-    abstract fun inject(view: Page1ViewModel.Companion)
+    abstract fun inject(view: CarListingViewModel.Companion)
 }

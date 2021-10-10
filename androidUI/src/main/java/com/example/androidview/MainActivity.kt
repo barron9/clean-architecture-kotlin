@@ -10,7 +10,7 @@ import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import com.cachedata.DataCacheFactory
 import com.example.androidview.databinding.ActivityMainBinding
-import com.example.androidview.features.CarListings.Page1ViewModel
+import com.example.androidview.features.CarListings.CarListingViewModel
 import entities.Car
 import entities.CarResponse
 import io.reactivex.Observable
@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingMain = ActivityMainBinding.inflate(layoutInflater)
-        setSupportActionBar(bindingMain.toolbar);
-       // supportActionBar?.setDisplayShowTitleEnabled(false)
+        setSupportActionBar(bindingMain.toolbar)
+        // supportActionBar?.setDisplayShowTitleEnabled(false)
         bindingMain.toolbar.elevation = 0f
 
         // DaggerAppComp.create().inject(this)
@@ -68,11 +68,11 @@ class MainActivity : AppCompatActivity() {
         searchView.queryHint = "type a car maker"
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
-               if (!p0.isNullOrEmpty())
-                   Observable.create<Unit> {
-                       println("Pageviewmodel-test-"+Thread.currentThread().name)
-                       Page1ViewModel.call(p0)!!
-                   }
+                if (!p0.isNullOrEmpty())
+                    Observable.create<Unit> {
+                        println("Pageviewmodel-test-" + Thread.currentThread().name)
+                        CarListingViewModel.call(p0)!!
+                    }
                         .subscribeOn(Schedulers.single())!!
                         .observeOn(Schedulers.newThread())!!
                         .subscribe()

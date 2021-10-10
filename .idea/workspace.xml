@@ -15,58 +15,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="categorie adapter change">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/3/03bc9367eed87c98d508c8170b481e35d648d264" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/5/05aa8d6e7e653da79ba718bf64946f1badb63d61" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/091fe0f234f116f362ecd7d9ef8be1874b65bdb7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/b/0b88e7a11b0ae871695fde7903287f44528bc704" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/9/19a30ef8070ea5a5e0a47778e42b1bb381f8b916" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1c07d704f13ae99ee36e0601692281370fcd677d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/0/20a49c231eaafef4082d67cf48f7765c96c771d9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/35a8748b1b3e780b263cfcff9ec3e59d64f747dc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/40a39327e9ce2dd20ff7cdb6c217c321fb3866f8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/2/42d4004c790f7dba1ca614a5b5c6d515ecb508e1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/9/59241cb1285f46e70f8b7352251eecced5138a26" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/c/5c7bc3949326eaaf0da22fa46933571bbbd237cb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5f4f2215fb13b443c3a7fa9407fa10085a320f8d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/0/601e7cb080a3e878ed644d246a1e484bf220ffca" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/6586cd47c40b7031eb6bf5021f0404475dc08af0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/749edfcc96398253e5b3416184e95c46621da850" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7e7c3928bba006a6e7912d0fc5007d510d5d6659" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/0/8010e05d6a8c355ca7c03296e8f57e160d4541d4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/3/93060370902b920b55d1eb2e813794c01bd3dd4b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/b/9bb51bc0c825dd9cd9f3865faf922e420c2a1dcd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/d/9df1816d8703283b1f64d04a39cdef30fa9ba611" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9f5470ef43fd1acab01d54a63bdece9a90dec1b7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/1/b19ab96882e176c92627017ef70c5dc6e3f50f3f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/1/c1c55edbdae754b79ef331c990cf9106ba0a5603" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/7/d72c8b69b8da0b3b02b699ccd509295dbd783baa" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/dbcff70658daf80b53ce624f6adcaa529df5ed8d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f38f14a271678a5b5900d5ff164ffaefeccaccfd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f687eb7ad707bb3e2b5418f9adbb5b68398b718d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/features/CarListings/Categories.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/androidUI/src/main/res/xml/activity_main_xml_constraintlayout_scene.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/androidUI/src/main/res/xml/fragment_page1_scene.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="motion layout added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/di/AppComp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/di/AppComp.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/features/CarListings/CategorieAdapterAlt.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/features/CarListings/CategorieAdapterAlt.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/features/CarListings/Page1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/features/CarListings/CarListing.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/features/CarListings/Page1ViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/features/CarListings/CarListingViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/buildSrc/src/main/java/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/buildSrc/src/main/java/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/navigation/nav_file.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/navigation/nav_file.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -689,7 +646,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633836531574</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="motion layout added">
+      <created>1633841916826</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1633841916826</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -716,7 +680,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add dummy tests" />
     <MESSAGE value="domain gradle file" />
     <MESSAGE value="name change" />
     <MESSAGE value="setcar method cng" />
@@ -741,7 +704,8 @@
     <MESSAGE value="livedata added" />
     <MESSAGE value="doc added" />
     <MESSAGE value="categorie adapter change" />
-    <option name="LAST_COMMIT_MESSAGE" value="categorie adapter change" />
+    <MESSAGE value="motion layout added" />
+    <option name="LAST_COMMIT_MESSAGE" value="motion layout added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

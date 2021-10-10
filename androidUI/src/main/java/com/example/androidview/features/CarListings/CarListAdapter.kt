@@ -16,14 +16,15 @@ class CarListAdapter : ListAdapter<CarMake, CarListAdapter.CarViewHolder>(ItemCo
     }
 
     override fun onBindViewHolder(holder: CarViewHolder, position: Int) {
-       val current = getItem(position)
+        val current = getItem(position)
         current?.let {
             holder.bind(current)
         }
     }
 
-    class CarViewHolder(private val binding: ItemCarBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(car: CarMake){
+    class CarViewHolder(private val binding: ItemCarBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(car: CarMake) {
             binding.apply {
                 carmake.text = car.Make_Name
                 carmodel.text = car.Mfr_Name
@@ -32,7 +33,9 @@ class CarListAdapter : ListAdapter<CarMake, CarListAdapter.CarViewHolder>(ItemCo
     }
 
     class ItemComparator : DiffUtil.ItemCallback<CarMake>() {
-        override fun areItemsTheSame(oldItem: CarMake, newItem: CarMake) = oldItem.Make_ID == newItem.Make_ID
+        override fun areItemsTheSame(oldItem: CarMake, newItem: CarMake) =
+            oldItem.Make_ID == newItem.Make_ID
+
         override fun areContentsTheSame(oldItem: CarMake, newItem: CarMake) = oldItem == newItem
     }
 }

@@ -20,14 +20,14 @@ import java.util.*
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Page1.newInstance] factory method to
+ * Use the [CarListing.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Page1 : Fragment() {
+class CarListing : Fragment() {
     private lateinit var bindingMain: FragmentPage1Binding
     var carlist: MutableList<CarMake> = mutableListOf()
-    lateinit var carListAdapter : CarListAdapter;
-    lateinit var ctgListAdapter : CategorieAdapterAlt;
+    lateinit var carListAdapter: CarListAdapter
+    lateinit var ctgListAdapter: CategorieAdapterAlt
 
     @SuppressLint("CheckResult")
     override fun onCreateView(
@@ -47,8 +47,8 @@ class Page1 : Fragment() {
 
         //** alternate - viewmodel / livedata
 
-        Page1ViewModel.resultdata.observe(this@Page1.viewLifecycleOwner) {
-            bindingMain.apply{
+        CarListingViewModel.resultdata.observe(this@CarListing.viewLifecycleOwner) {
+            bindingMain.apply {
                 vis(it.size)
                 carListAdapter.submitList(it)
             }
@@ -58,12 +58,12 @@ class Page1 : Fragment() {
 
         //rxjava alternate
 
-        Page1ViewModel.loader
+        CarListingViewModel.loader
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(::handelloader)
 
-        Page1ViewModel.bs
+        CarListingViewModel.bs
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnNext { Log.e("Pageviewmodel-doonnext", "dooennext") }
@@ -82,7 +82,11 @@ class Page1 : Fragment() {
             categories.apply {
                 adapter = ctgListAdapter
                 layoutManager =
-                    LinearLayoutManager(bindingMain.root.context, LinearLayoutManager.HORIZONTAL, false)
+                    LinearLayoutManager(
+                        bindingMain.root.context,
+                        LinearLayoutManager.HORIZONTAL,
+                        false
+                    )
             }
         }
 
