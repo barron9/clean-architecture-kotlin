@@ -1,6 +1,5 @@
 package com.example.androidview
 
-import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +11,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidview.databinding.FragmentPage1Binding
 import entities.CarMake
@@ -26,10 +24,10 @@ import java.util.*
 
 /**
  * A simple [Fragment] subclass.
- * Use the [page1.newInstance] factory method to
+ * Use the [Page1.newInstance] factory method to
  * create an instance of this fragment.
  */
-class page1 : Fragment() {
+class Page1 : Fragment() {
     private lateinit var bindingMain: FragmentPage1Binding
     var carlist: MutableList<CarMake> = mutableListOf()
     lateinit var carListAdapter : CarListAdapter;
@@ -41,12 +39,22 @@ class page1 : Fragment() {
 
         bindingMain = FragmentPage1Binding.inflate(inflater)
         carListAdapter = CarListAdapter()
-        PagestartViewModel.loader
+
+        Page1ViewModel.loader
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(::handelloader)
 
-        PagestartViewModel.bs
+        //** alternate - viewmodel / livedata
+
+        Page1ViewModel.resultdata.observe(this@Page1.viewLifecycleOwner) {
+            bindingMain.apply{
+                carListAdapter.submitList(it)
+            }
+        }
+
+        // @ends
+        Page1ViewModel.bs
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnNext { Log.e("Pageviewmodel-doonnext", "dooennext") }
@@ -87,9 +95,9 @@ class page1 : Fragment() {
         //bindingMain.carlist.adapter = null
        // bindingMain.carlist.adapter = Adapter(carlist)
         bindingMain.carlist.adapter = carListAdapter
-        bindingMain.apply{
-            carListAdapter.submitList(car?.Results!!.toMutableList())
-        }
+        //bindingMain.apply{
+         //   carListAdapter.submitList(car?.Results!!.toMutableList())
+       // }
 
         vis(carlist.size)
     }
@@ -147,7 +155,7 @@ class CategorieAdapter(val cList: MutableList<Categorie>, val recycle: RecyclerV
                 RC.smoothScrollToPosition(list.indexOf(item))
                 Observable.create<Unit> {
                     println("Pageviewmodel-test-" + Thread.currentThread().name)
-                    PagestartViewModel.call(item.c_name)!!
+                    Page1ViewModel.call(item.c_name)!!
                 }
                     .subscribeOn(Schedulers.single())?.subscribe()
             }

@@ -2,7 +2,6 @@ package com.example.androidview
 
 
 import android.annotation.SuppressLint
-import android.os.Build
 import android.os.Bundle
 import android.os.StrictMode
 import android.view.Menu
@@ -16,7 +15,6 @@ import entities.CarResponse
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 import usecases.DefaultUseCase
-import java.util.*
 import javax.inject.Inject
 
 
@@ -72,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                if (!p0.isNullOrEmpty())
                    Observable.create<Unit> {
                        println("Pageviewmodel-test-"+Thread.currentThread().name)
-                       PagestartViewModel.call(p0)!!
+                       Page1ViewModel.call(p0)!!
                    }
                         .subscribeOn(Schedulers.single())!!
                         .observeOn(Schedulers.newThread())!!

@@ -1,6 +1,6 @@
 package com.di
 
-import com.example.androidview.PagestartViewModel
+import com.example.androidview.Page1ViewModel
 import dagger.Component
 import interfaces.NetworkInterface
 import network.APIService
@@ -13,5 +13,5 @@ abstract class AppComp {
         return APIService()
     }
 
-    abstract fun inject(view: PagestartViewModel.Companion)
+    abstract fun inject(view: Page1ViewModel.Companion)
 }

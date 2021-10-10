@@ -3,7 +3,7 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_file" app:startDestination="@id/page1">
 
-    <fragment android:id="@+id/page1" android:name="com.example.androidview.page1" android:label="fragment_page1"
+    <fragment android:id="@+id/page1" android:name="com.example.androidview.Page1" android:label="fragment_page1"
               tools:layout="@layout/fragment_page1">
         <action android:id="@+id/action_page1_to_page2" app:destination="@id/page2"/>
         <action android:id="@+id/action_page1_to_page3" app:destination="@id/page3"/>
