@@ -29,7 +29,7 @@ class CategorieAdapterAlt :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(ctg: Categorie) {
-            binding.item.text = ctg.c_name
+           // binding.item.text = ctg.c_name
             binding.item.setOnClickListener {
                 Observable.create<Unit> {
                     CarListingViewModel.call(ctg.c_name)!!

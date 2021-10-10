@@ -6,17 +6,28 @@
     <Transition
         motion:constraintSetEnd="@+id/end"
         motion:constraintSetStart="@id/start"
-        motion:duration="1000">
-       <KeyFrameSet>
-           <KeyAttribute
-               motion:motionTarget="@+id/categories"
-               motion:framePosition="0"
-               android:scaleY="1" />
-           <KeyAttribute
-               motion:motionTarget="@+id/categories"
-               motion:framePosition="100"
-               android:scaleY="1.2" />
-       </KeyFrameSet>
+        motion:duration="1000"
+        motion:motionInterpolator="cubic(0.2,0.2,0.18,1)">
+
+        <OnSwipe motion:touchAnchorId="@+id/carlist" />
+        <KeyFrameSet>
+            <KeyAttribute
+                android:elevation="1dp"
+                motion:framePosition="0"
+                motion:motionTarget="@+id/carlist" />
+            <KeyAttribute
+                android:elevation="5dp"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/carlist" />
+            <KeyAttribute
+                android:elevation="1dp"
+                motion:framePosition="0"
+                motion:motionTarget="@+id/categories" />
+            <KeyAttribute
+                android:elevation="0dp"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/categories" />
+        </KeyFrameSet>
         <OnSwipe motion:touchAnchorId="@+id/carlist" />
     </Transition>
 
@@ -25,18 +36,18 @@
 
     <ConstraintSet android:id="@+id/end">
         <Constraint
-            android:id="@+id/categories"
+            android:id="@+id/carlist"
             motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintStart_toStartOf="parent" />
-        <Constraint
-            android:id="@+id/categories"
-            motion:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintStart_toStartOf="parent" />
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.0"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="@+id/categories" />
     </ConstraintSet>
 </MotionScene>
