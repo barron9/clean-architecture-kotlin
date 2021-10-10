@@ -1,6 +1,6 @@
 package com.di
 
-import com.example.androidview.Page1ViewModel
+import com.example.androidview.features.CarListings.Page1ViewModel
 import dagger.Component
 import interfaces.NetworkInterface
 import network.APIService

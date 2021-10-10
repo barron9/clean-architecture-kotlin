@@ -1,4 +1,4 @@
-package com.example.androidview
+package com.example.androidview.features.CarListings
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -6,17 +6,13 @@ import android.util.Log
 import android.view.*
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
-import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.androidview.databinding.FragmentPage1Binding
 import entities.CarMake
 import entities.CarResponse
 import entities.Categorie
-import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import java.util.*
@@ -31,6 +27,8 @@ class Page1 : Fragment() {
     private lateinit var bindingMain: FragmentPage1Binding
     var carlist: MutableList<CarMake> = mutableListOf()
     lateinit var carListAdapter : CarListAdapter;
+    lateinit var ctgListAdapter : CategorieAdapterAlt;
+
     @SuppressLint("CheckResult")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,6 +42,8 @@ class Page1 : Fragment() {
         //carlist adapter init
 
         carListAdapter = CarListAdapter()
+
+        ctgListAdapter = CategorieAdapterAlt()
 
         //** alternate - viewmodel / livedata
 
@@ -80,6 +80,7 @@ class Page1 : Fragment() {
                 layoutManager = GridLayoutManager(bindingMain.root.context, 4)
             }
             categories.apply {
+                adapter = ctgListAdapter
                 layoutManager =
                     LinearLayoutManager(bindingMain.root.context, LinearLayoutManager.HORIZONTAL, false)
             }
@@ -92,7 +93,9 @@ class Page1 : Fragment() {
             Categorie(3, "classic"),
             Categorie(5, "roads"),
         )
-        bindingMain.categories.adapter = CategorieAdapter(cs, bindingMain.categories)
+
+        ctgListAdapter.submitList(cs)
+
         return bindingMain.root
     }
 
@@ -118,38 +121,3 @@ class Page1 : Fragment() {
 
 }
 
-
-class CategorieAdapter(val cList: MutableList<Categorie>, val recycle: RecyclerView) :
-    RecyclerView.Adapter<CategorieAdapter.ModelViewHolder>() {
-
-    class ModelViewHolder(view: View, val RC: RecyclerView, val list: MutableList<Categorie>) :
-        RecyclerView.ViewHolder(view) {
-        val c_item: Button = view.findViewById(R.id.item)
-        fun bindItems(item: Categorie) {
-            c_item.text = item.c_name
-            c_item.setOnClickListener {
-                RC.smoothScrollToPosition(0)
-                RC.smoothScrollToPosition(list.indexOf(item))
-                Observable.create<Unit> {
-                    println("Pageviewmodel-test-" + Thread.currentThread().name)
-                    Page1ViewModel.call(item.c_name)!!
-                }
-                    .subscribeOn(Schedulers.single())?.subscribe()
-            }
-        }
-
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ModelViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_ctg, parent, false)
-        return ModelViewHolder(view, recycle, cList)
-    }
-
-    override fun getItemCount(): Int {
-        return cList.size
-    }
-
-    override fun onBindViewHolder(holder: ModelViewHolder, position: Int) {
-        holder.bindItems(cList[position])
-    }
-}

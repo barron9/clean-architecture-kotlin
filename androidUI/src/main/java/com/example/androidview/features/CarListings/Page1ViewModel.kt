@@ -1,10 +1,7 @@
-package com.example.androidview
+package com.example.androidview.features.CarListings
 
 import android.annotation.SuppressLint
-import android.os.Looper
 import android.util.Log
-import androidx.annotation.WorkerThread
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.di.DaggerAppComp
@@ -12,8 +9,6 @@ import entities.CarMake
 import entities.CarResponse
 import interfaces.NetworkInterface
 import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 
 class Page1ViewModel : ViewModel() {
