@@ -19,25 +19,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="animicon">
-      <change afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/repository/AppRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/repository/Resource.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b5f22769-539f-41b2-ab74-4878c708faf8" name="Changes" comment="repo update with flow-livedata">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/di/AppComp.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/di/AppComp.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/di/DataFactoryModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/di/DataFactoryModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/features/CarListings/CarListing.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/features/CarListings/CarListing.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/features/CarListings/CarListingViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/features/CarListings/CarListingViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/persistance/CarDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/persistance/CarDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/fragment_page1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/layout/item_car.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/layout/item_car.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/androidUI/src/main/res/menu/bottom_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/res/menu/bottom_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/repository/AppRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/androidUI/src/main/java/com/example/androidview/repository/AppRepository.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -695,7 +681,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633886191857</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="repo update with flow-livedata">
+      <created>1633895727359</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1633895727359</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -722,7 +715,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="shouldSpec tests" />
     <MESSAGE value="add ui-target 11" />
     <MESSAGE value="add androidUI/App as seperate UI layer" />
     <MESSAGE value="build fix migration" />
@@ -747,7 +739,8 @@
     <MESSAGE value="motionlayout update" />
     <MESSAGE value="material-bottom nav add" />
     <MESSAGE value="animicon" />
-    <option name="LAST_COMMIT_MESSAGE" value="animicon" />
+    <MESSAGE value="repo update with flow-livedata" />
+    <option name="LAST_COMMIT_MESSAGE" value="repo update with flow-livedata" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

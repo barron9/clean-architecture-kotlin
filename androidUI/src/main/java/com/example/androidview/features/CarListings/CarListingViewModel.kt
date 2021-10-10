@@ -18,7 +18,7 @@ class CarListingViewModel @Inject constructor(
     val repository: AppRepository
 ) : ViewModel() {
 
-    suspend fun sync() = repository.transactions().asLiveData()
+    fun sync(q: String) = repository.transactions(q).asLiveData() //flow to ld.
 
     companion object {
         var dagger = DaggerAppComp.create()
@@ -37,6 +37,7 @@ class CarListingViewModel @Inject constructor(
                     bs.onNext(s!!)
                     loader.onNext(false)
                     resultdata.postValue(s.Results)
+
                     Log.e("Pageviewmodel", Thread.currentThread().name)
                 }
             return bs

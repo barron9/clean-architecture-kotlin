@@ -7,6 +7,7 @@ import android.view.*
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidview.databinding.FragmentPage1Binding
@@ -34,6 +35,9 @@ class CarListing : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //viewmodel inj.
+        val carListingViewModel: CarListingViewModel =
+            ViewModelProvider(this).get(CarListingViewModel::class.java)
 
         //viewbinding
 
@@ -52,6 +56,9 @@ class CarListing : Fragment() {
                 vis(it.size)
                 carListAdapter.submitList(it)
             }
+        }
+        carListingViewModel.sync("").observe(this.viewLifecycleOwner) {
+
         }
 
         // @ends

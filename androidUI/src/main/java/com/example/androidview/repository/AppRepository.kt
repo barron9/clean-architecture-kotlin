@@ -11,12 +11,14 @@ class AppRepository @Inject constructor(
 ) {
     private val db = persistence.carDao();
 
-    suspend fun transactions() = flow<Resource<entities.Car>> {
+    fun transactions(q: String) = flow {
 
-        persistence.withTransaction {
-            db.getCars()
+        val res = persistence.withTransaction {
             db.addCar(Car("1", "bmw", "mss"))
+            db.getCars()
         }
+        val r = Resource.Success(res)
+        emit(r)
 
     }
 
