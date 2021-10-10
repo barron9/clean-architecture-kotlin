@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidview.databinding.FragmentPage1Binding
 import entities.CarMake
@@ -31,7 +32,7 @@ import java.util.*
 class page1 : Fragment() {
     private lateinit var bindingMain: FragmentPage1Binding
     var carlist: MutableList<CarMake> = mutableListOf()
-
+    lateinit var carListAdapter : CarListAdapter;
     @SuppressLint("CheckResult")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +40,7 @@ class page1 : Fragment() {
     ): View? {
 
         bindingMain = FragmentPage1Binding.inflate(inflater)
+        carListAdapter = CarListAdapter()
         PagestartViewModel.loader
             .subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
@@ -51,12 +53,15 @@ class page1 : Fragment() {
             .doOnError { }
             .subscribe(::myhandler)
 
-        bindingMain.carlist.layoutManager = GridLayoutManager(bindingMain.root.context, 4)
-        //LinearLayoutManager(bindingMain.root.context, LinearLayoutManager.VERTICAL, false)
-        bindingMain.categories.layoutManager =
-            LinearLayoutManager(bindingMain.root.context, LinearLayoutManager.HORIZONTAL, false)
-
-         bindingMain.carlist.addOnScrollListener(myscrolllistener(binding = bindingMain))
+        bindingMain.apply {
+            carlist.apply {
+                layoutManager = GridLayoutManager(bindingMain.root.context, 4)
+            }
+            categories.apply {
+                layoutManager =
+                    LinearLayoutManager(bindingMain.root.context, LinearLayoutManager.HORIZONTAL, false)
+            }
+        }
 
         val cs: MutableList<Categorie> = mutableListOf(
             Categorie(0, "ford"),
@@ -78,9 +83,14 @@ class page1 : Fragment() {
 
     fun myhandler(car: CarResponse?) {
         //  System.out.println("car res " + car?.Results!!.toMutableList())
-        carlist = car?.Results!!.toMutableList()
-        bindingMain.carlist.adapter = null
-        bindingMain.carlist.adapter = Adapter(carlist)
+        //carlist = car?.Results!!.toMutableList()
+        //bindingMain.carlist.adapter = null
+       // bindingMain.carlist.adapter = Adapter(carlist)
+        bindingMain.carlist.adapter = carListAdapter
+        bindingMain.apply{
+            carListAdapter.submitList(car?.Results!!.toMutableList())
+        }
+
         vis(carlist.size)
     }
 
@@ -94,28 +104,7 @@ class page1 : Fragment() {
 
 }
 
-class myscrolllistener(private val binding: FragmentPage1Binding) : RecyclerView.OnScrollListener() {
-    override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-        super.onScrollStateChanged(recyclerView, newState)
-    }
-    override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-        super.onScrolled(recyclerView, dx, dy)
-        Log.e("scrollxy", "dx:${dx} , dy:${dy}")
-        binding.categories.layoutParams = binding.categories.layoutParams.apply {
 
-            this.height = this.height - dy
-        }
-
-        /*   else -> binding.categories.layoutParams = binding.categories.layoutParams.apply {
-               if(this.height<100)
-                   this.height = this.height + dy
-               else
-                   this.height = 100
-
-           }*/
-    }
-    //binding.categories.invalidate()
-}
 
 class Adapter(val cList: MutableList<CarMake>) :
     RecyclerView.Adapter<com.example.androidview.Adapter.ModelViewHolder>() {
