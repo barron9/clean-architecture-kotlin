@@ -2,7 +2,6 @@ package com.di
 
 import android.app.Application
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.cachedata.DataCacheFactory
 import com.example.androidview.persistance.CarDatabase
 import dagger.Binds
@@ -25,7 +24,7 @@ class Persistence {
 
     @Singleton
     @Provides
-    fun provideRoomDB(): RoomDatabase {
+    fun provideRoomDB(): CarDatabase {
         return Room.databaseBuilder(applicationContext, CarDatabase::class.java, "CarDatabase")
             .build()
     }

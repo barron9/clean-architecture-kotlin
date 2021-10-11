@@ -7,9 +7,10 @@ import android.view.*
 import android.view.View.INVISIBLE
 import android.view.View.VISIBLE
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.androidview.R
 import com.example.androidview.databinding.FragmentPage1Binding
 import entities.CarMake
 import entities.CarResponse
@@ -30,14 +31,15 @@ class CarListing : Fragment() {
     lateinit var carListAdapter: CarListAdapter
     lateinit var ctgListAdapter: CategorieAdapterAlt
 
+    // @Inject
+    // lateinit var carListingViewModel :CarListingViewModel
+    private val vm: CarListingViewModel by navGraphViewModels(R.id.nav_file)
+
     @SuppressLint("CheckResult")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //viewmodel inj.
-        val carListingViewModel: CarListingViewModel =
-            ViewModelProvider(this).get(CarListingViewModel::class.java)
 
         //viewbinding
 
@@ -57,9 +59,12 @@ class CarListing : Fragment() {
                 carListAdapter.submitList(it)
             }
         }
-        carListingViewModel.sync("").observe(this.viewLifecycleOwner) {
 
-        }
+        // val carListingViewModel = ViewModelProvider(requireActivity()).get(CarListingViewModel::class.java)
+
+        //vm.sync("").observe(this.viewLifecycleOwner) {
+
+        //}
 
         // @ends
 
@@ -130,5 +135,10 @@ class CarListing : Fragment() {
         }
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //findNavController().navigate(R.id.action_page1_to_page4)
+
+    }
 }
 

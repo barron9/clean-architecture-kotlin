@@ -4,9 +4,7 @@ import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
 import com.di.DaggerAppComp
-import com.example.androidview.repository.AppRepository
 import entities.CarMake
 import entities.CarResponse
 import interfaces.NetworkInterface
@@ -14,11 +12,12 @@ import io.reactivex.Observable
 import io.reactivex.subjects.BehaviorSubject
 import javax.inject.Inject
 
-class CarListingViewModel @Inject constructor(
-    val repository: AppRepository
+class CarListingViewModel
+@Inject constructor(
+    //val repository: Application
 ) : ViewModel() {
 
-    fun sync(q: String) = repository.transactions(q).asLiveData() //flow to ld.
+    // fun sync(q: String) = repository.transactions(q).asLiveData() //flow to ld.
 
     companion object {
         var dagger = DaggerAppComp.create()

@@ -7,7 +7,9 @@ import android.os.StrictMode
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.SearchView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
 import com.cachedata.DataCacheFactory
 import com.example.androidview.databinding.ActivityMainBinding
 import com.example.androidview.features.CarListings.CarListingViewModel
@@ -25,8 +27,11 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var duc: DefaultUseCase
+
     private lateinit var bindingMain: ActivityMainBinding
 
+    //viewmodel inj.
+    private val carListingViewModel: CarListingViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,6 +81,7 @@ class MainActivity : AppCompatActivity() {
                         .subscribeOn(Schedulers.single())!!
                         .observeOn(Schedulers.newThread())!!
                         .subscribe()
+                NavController(applicationContext).navigate(R.id.page2)
                 return true
             }
 

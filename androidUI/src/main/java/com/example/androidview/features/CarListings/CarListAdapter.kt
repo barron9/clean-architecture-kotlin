@@ -28,6 +28,9 @@ class CarListAdapter : ListAdapter<CarMake, CarListAdapter.CarViewHolder>(ItemCo
             binding.apply {
                 carmake.text = car.Make_Name
                 carmodel.text = car.Mfr_Name
+                carmodel.setOnClickListener {
+                    // NavController(binding.root).navigate(R.id.page2)
+                }
             }
         }
     }
