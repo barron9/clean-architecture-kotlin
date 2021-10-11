@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class Coordinator @Inject constructor(private val app: Application) {
     val finalHost = NavHostFragment.create(R.navigation.nav_file)
-    var navController: NavHostController = NavHostController(app);
+    var navController: NavHostController = NavHostController(app)
     fun navigate() {
         finalHost.navController
             .apply {
